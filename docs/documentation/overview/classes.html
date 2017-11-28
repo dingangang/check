@@ -1,0 +1,39 @@
+---
+title: CSS classes
+layout: documentation
+doc-tab: overview
+doc-subtab: classes
+---
+
+{% include subnav-overview.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">类（Classes）</h1>
+    <h2 class="subtitle">Bulma是一个简单的CSS类的<strong>集合</strong>。写你所想的HTML。</h2>
+
+    <hr>
+
+    <div class="content">
+      <p>
+        Bulma是一个<strong>CSS</strong>框架，所以最后的输出结果是一个<strong>单独的</strong> <code>.css</code>文件：
+        <br>
+        <a href="https://github.com/jgthms/bulma/blob/master/css/bulma.css">https://github.com/jgthms/bulma/blob/master/css/bulma.css</a></p>
+      <p>
+        因为Bulma仅仅包括了CSS类，所以你所写的HTML文件<strong>不会影响</strong>页面风格。这就是<code>.input</code>单独作为一个类（class）存在的原因，所以你可以选择<code>&lt;input type="text"&gt;</code>元素来进行样式设定.
+      </p>
+      <p>
+        Bulma<strong>通常</strong>为标签直接设定样式<strong>两次</strong>:
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/jgthms/bulma/blob/master/sass/base/generic.sass"><code>generic.sass</code></a>定义页面基本风格
+        </li>
+        <li>
+          <a href="{{ site.url }}/documentation/elements/content/"><code>.content</code> class </a>可以在<em>所有的</em>文本内容,例如
+          <a href="http://www.bootcss.com/p/bootstrap-wysiwyg/">WYSIWYG</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

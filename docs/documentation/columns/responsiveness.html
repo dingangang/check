@@ -1,0 +1,143 @@
+---
+title: Columns responsiveness
+layout: documentation
+doc-tab: columns
+doc-subtab: responsiveness
+---
+
+{% capture columns_mobile %}
+<div class="columns is-mobile">
+  <div class="column">1</div>
+  <div class="column">2</div>
+  <div class="column">3</div>
+  <div class="column">4</div>
+</div>
+{% endcapture %}
+
+{% capture columns_desktop %}
+<div class="columns is-desktop">
+  <div class="column">1</div>
+  <div class="column">2</div>
+  <div class="column">3</div>
+  <div class="column">4</div>
+</div>
+{% endcapture %}
+
+{% capture columns_multiple_breakpoints %}
+<div class="columns is-mobile">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+    <code>is-three-quarters-mobile</code><br>
+    <code>is-two-thirds-tablet</code><br>
+    <code>is-half-desktop</code>
+    <code>is-one-third-widescreen</code>
+    <code>is-one-quarter-fullhd</code>
+  </div>
+  <div class="column">1</div>
+  <div class="column">1</div>
+</div>
+{% endcapture %}
+
+{% include subnav-columns.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">列响应式（Columns responsiveness）</h1>
+    <h2 class="subtitle">
+      在每个<strong>断点</strong>的情况中，展示<strong>不同的</strong>列布局
+    </h2>
+
+    {% include anchor.html name="移动端列（Mobile columns）" %}
+
+    <div class="content">
+      <p>
+        默认情况下，列布局只从<strong>tablet</strong>及以上的断点情况下激活。这意味着在<strong>手机端</strong>列是堆叠的。
+        <br>
+        如果你希望列的布局在<strong>手机端</strong>同样生效，只需要在<code>columns</code>容器添加<code>is-mobile</code>修饰器:
+      </p>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column">
+        <p class="bd-notification is-info">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">2</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">3</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-danger">4</p>
+      </div>
+    </div>
+
+    {% highlight html %}{{ columns_mobile }}{% endhighlight %}
+
+    <div class="message is-info">
+      <p class="message-header">
+        调整大小
+      </p>
+      <p class="message-body">
+        如果你想看到不同的情况，你需要调整浏览器的大小来观察<em>什么时候 </em>列是水平排列和堆叠排列。
+      </p>
+    </div>
+
+    <div class="content">
+      <p>
+        如果你<em>只想 </em>在<strong>desktop</strong>断点及以上，那么就添加<code>is-desktop</code>修饰器到<code>columns</code>容器:
+      </p>
+    </div>
+
+    <div class="columns is-desktop">
+      <div class="column">
+        <p class="bd-notification is-info">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">2</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">3</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-danger">4</p>
+      </div>
+    </div>
+
+    {% highlight html %}{{ columns_desktop }}{% endhighlight %}
+
+    {% include anchor.html name="不同断点不同的列尺寸（Different column sizes per breakpoint）" %}
+
+    <div class="content">
+      <p>你可以在<em>每个</em> 不同的断点定义不同的<strong>列尺寸</strong>包括有: mobile, tablet, 和 desktop.</p>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
+        <p class="bd-notification is-info">
+          <code>is-half-mobile</code><br>
+          <code>is-one-third-tablet</code><br>
+          <code>is-one-quarter-desktop</code>
+        </p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">1</p>
+      </div>
+    </div>
+
+    <div class="message is-info">
+      <p class="message-header">改变大小</p>
+      <p class="message-body">如果你想看到实际的变化，改变浏览器大小来观察同一个列在不同断点视口大小的宽度变化。</p>
+    </div>
+
+    {% highlight html %}{{ columns_multiple_breakpoints }}{% endhighlight %}
+  </div>
+</section>

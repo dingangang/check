@@ -1,0 +1,406 @@
+---
+title: Typography helpers
+layout: documentation
+doc-tab: modifiers
+doc-subtab: typography-helpers
+---
+
+{% assign initial_vars = site.data.variables.utilities.initial-variables.vars %}
+{% assign sizes        = site.data.variables.utilities.derived-variables.vars.sizes.value | split: ' ' %}
+
+{% capture thead %}
+<thead>
+  <tr>
+    <th>
+      Class
+    </th>
+    {% for breakpoint_hash in site.data.breakpoints %}
+      {% assign breakpoint = breakpoint_hash[1] %}
+      <th>
+        {{ breakpoint.name }}<br>
+        {% if breakpoint.id == 'mobile' %}
+          Up to <code>{{ breakpoint.to }}px</code>
+        {% elsif breakpoint.id == 'fullhd' %}
+          <code>{{ breakpoint.from }}px</code> and above
+        {% else %}
+          Between <code>{{ breakpoint.from }}px</code> and <code>{{ breakpoint.to }}px</code>
+        {% endif %}
+      </th>
+    {% endfor %}
+  </tr>
+</thead>
+{% endcapture %}
+
+{% capture size1 %}
+<td class="is-narrow">
+  <p class="notification is-success"><code>{{ initial_vars.size-1.value }}</code></p>
+</td>
+{% endcapture %}
+
+{% capture unchanged %}
+<td class="is-narrow">
+  <p class="notification">unchanged</p>
+</td>
+{% endcapture %}
+
+{% capture left %}
+<td class="is-narrow">
+  <p class="notification is-success">left-aligned</p>
+</td>
+{% endcapture %}
+
+{% include subnav-modifiers.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">排版辅助类（Typography helpers）</h1>
+    <h2 class="subtitle">
+     在不同的视口宽度调整文本的<strong>尺寸</strong>和<strong>颜色</strong>
+    </h2>
+
+    {% include anchor.html name="尺寸（Size）" %}
+
+    <div class="content">
+      <p>
+       提供了<strong>{{ sizes | size }}种不同尺寸</strong>可以选择:
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>
+            Class
+          </th>
+          <th>
+            Font-size
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+				{% for size in sizes %}
+					<tr>
+						{% assign key = 'size-' | append: forloop.index %}
+						<td><code>is-size-{{ forloop.index }}</code></td>
+						<td><code>{{ initial_vars[key].value }}</code></td>
+					</tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% include anchor.html name="响应式尺寸（Responsive size）" %}
+
+    <div class="content">
+      <p>
+       你可以在<em>每一种 </em>视口大小选择<strong>特定的</strong>尺寸。你只需要将<strong>视口宽度</strong>添加到尺寸修饰器。
+      </p>
+      <p>
+        比如说，以下是修饰器<code>$size-1</code>的对应类名:
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      {{ thead }}
+      <tbody>
+        <tr>
+          <td><code>is-size-1-mobile</code></td>
+          {{ size1 }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+        </tr>
+        <tr>
+          <td><code>is-size-1-tablet</code></td>
+          {{ unchanged }}
+          {{ size1 }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+        </tr>
+        <tr>
+          <td><code>is-size-1-touch</code></td>
+          {{ size1 }}
+          {{ size1 }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+        </tr>
+        <tr>
+          <td><code>is-size-1-desktop</code></td>
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ size1 }}
+          {{ size1 }}
+          {{ size1 }}
+        </tr>
+        <tr>
+          <td><code>is-size-1-widescreen</code></td>
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ size1 }}
+          {{ size1 }}
+        </tr>
+        <tr>
+          <td><code>is-size-1-fullhd</code></td>
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ size1 }}
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="content">
+      <p>
+       所有的<strong>7种尺寸</strong>都与上方的逻辑相同。
+      </p>
+    </div>
+
+    {% include anchor.html name="颜色（Colors）" %}
+
+    <div class="content">
+      <p>
+        你可以设定任一<strong>9种主要颜色</strong>或者<strong>9种灰色阴影</strong>的颜色:
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>
+            Class
+          </th>
+          <th>
+            Color
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>has-text-white</code></td><td>{% include color/white.html %}</td></tr>
+        <tr><td><code>has-text-black</code></td><td>{% include color/black.html %}</td></tr>
+        <tr><td><code>has-text-light</code></td><td>{% include color/white-ter.html %}</td></tr>
+        <tr><td><code>has-text-dark</code></td><td>{% include color/grey-darker.html %}</td></tr>
+        <tr><td><code>has-text-primary</code></td><td>{% include color/turquoise.html %}</td></tr>
+        <tr><td><code>has-text-info</code></td><td>{% include color/blue.html %}</td></tr>
+        <tr><td><code>has-text-success</code></td><td>{% include color/green.html %}</td></tr>
+        <tr><td><code>has-text-warning</code></td><td>{% include color/yellow.html %}</td></tr>
+        <tr><td><code>has-text-danger</code></td><td>{% include color/red.html %}</td></tr>
+        <tr><td><code>has-text-black-bis</code></td><td>{% include color/black-bis.html %}</td></tr>
+        <tr><td><code>has-text-black-ter</code></td><td>{% include color/black-ter.html %}</td></tr>
+        <tr><td><code>has-text-grey-darker</code></td><td>{% include color/grey-darker.html %}</td></tr>
+        <tr><td><code>has-text-grey-dark</code></td><td>{% include color/grey-dark.html %}</td></tr>
+        <tr><td><code>has-text-grey</code></td><td>{% include color/grey.html %}</td></tr>
+        <tr><td><code>has-text-grey-light</code></td><td>{% include color/grey-light.html %}</td></tr>
+        <tr><td><code>has-text-grey-lighter</code></td><td>{% include color/grey-lighter.html %}</td></tr>
+        <tr><td><code>has-text-white-ter</code></td><td>{% include color/white-ter.html %}</td></tr>
+        <tr><td><code>has-text-white-bis</code></td><td>{% include color/white-bis.html %}</td></tr>
+      </tbody>
+    </table>
+
+    {% include anchor.html name="文本位置（Alignment）" %}
+
+    <div class="content">
+      <p>
+        当你需要使用align属性的时候，可以应用以下<strong>4个文本位置辅助类</strong>:
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>
+            Class
+          </th>
+          <th>
+            Alignment
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td><code>has-text-centered</code></td>
+        <td>让文本<strong>居中（centered）</strong></td>
+        </tr>
+        <tr>
+        <td><code>has-text-justified</code></td>
+        <td>让文本<strong>铺满（justified）</strong></td>
+        </tr>
+        <tr>
+        <td><code>has-text-left</code></td>
+        <td>让文本<strong>左对齐</strong></td>
+        </tr>
+        <tr>
+        <td><code>has-text-right</code></td>
+        <td>让文本<strong>右对齐</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% include anchor.html name="响应式文本位置（Responsive Alignment）" %}
+
+    <div class="content">
+      <p>
+        你可以在不同的视口宽度指定不同的<strong>文本对齐样式</strong>。你只需要将<strong>视口宽度</strong>添加到文本对齐修饰类。
+      </p>
+      <p>
+        比如，以下是类<code>has-text-left</code>的修饰器写法:
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      {{ thead }}
+      <tbody>
+        <tr>
+          <td><code>has-text-left-mobile</code></td>
+          {{ left }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+        </tr>
+        <tr>
+          <td><code>has-text-left-tablet</code></td>
+          {{ unchanged }}
+          {{ left }}
+          {{ left }}
+          {{ left }}
+          {{ left }}
+        </tr>
+        <tr>
+          <td><code>has-text-left-tablet-only</code></td>
+          {{ unchanged }}
+          {{ left }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+        </tr>
+        <tr>
+          <td><code>has-text-left-touch</code></td>
+          {{ left }}
+          {{ left }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+        </tr>
+        <tr>
+          <td><code>has-text-left-desktop</code></td>
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ left }}
+          {{ left }}
+          {{ left }}
+        </tr>
+        <tr>
+          <td><code>has-text-left-desktop-only</code></td>
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ left }}
+          {{ unchanged }}
+          {{ unchanged }}
+        </tr>
+        <tr>
+          <td><code>has-text-left-widescreen</code></td>
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ left }}
+          {{ left }}
+        </tr>
+        <tr>
+          <td><code>has-text-left-widescreen-only</code></td>
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ left }}
+          {{ unchanged }}
+        </tr>
+        <tr>
+          <td><code>has-text-left-fullhd</code></td>
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ unchanged }}
+          {{ left }}
+        </tr>
+      </tbody>
+    </table>
+
+    {% include anchor.html name="文本转化（Text transformation）" %}
+
+    <div class="content">
+      <p>
+        你可以使用<strong>3种文本转化修饰类</strong>来指定文本的样式:
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+      <tr>
+        <th>
+          Class
+        </th>
+        <th>
+          Transformation
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>is-capitalized</code></td>
+        <td>将单词<strong>首字母</strong><strong>大写</strong></td>
+      </tr>
+      <tr>
+        <td><code>is-lowercase</code></td>
+        <td>转化全部的单词为<strong>小写</strong></td>
+      </tr>
+      <tr>
+        <td><code>is-uppercase</code></td>
+        <td>转化所有的单词为<strong>大写</strong></td>
+      </tr>
+      </tbody>
+    </table>
+
+    {% include anchor.html name="文本粗细（Text weight）" %}
+
+    <div class="content">
+      <p>
+        你可以通过以下<strong>4个文本粗细辅助类</strong>来设定文本的粗细:
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+      <tr>
+        <th>
+          Class
+        </th>
+        <th>
+          Weight
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>has-text-weight-light</code></td>
+        <td>文本weight调整为<strong>light</strong></td>
+      </tr>
+      <tr>
+        <td><code>has-text-weight-normal</code></td>
+        <td>文本weight调整为<strong>normal</strong></td>
+      </tr>
+      <tr>
+        <td><code>has-text-weight-semibold</code></td>
+        <td>文本weight调整为<strong>semi-bold</strong></td>
+      </tr>
+      <tr>
+        <td><code>has-text-weight-bold</code></td>
+        <td>文本weight调整为<strong>bold</strong></td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>

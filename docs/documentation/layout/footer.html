@@ -1,0 +1,35 @@
+---
+title: Footer
+layout: documentation
+doc-tab: layout
+doc-subtab: footer
+---
+
+{% include subnav-layout.html %}
+
+{% capture footer_example %}
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+{% endcapture %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">页脚（Footer）</h1>
+    <h2 class="subtitle">
+      一个简单的响应式<strong>页脚</strong>可以包括其他的元素: lists, headings, columns, icons, buttons...
+    </h2>
+
+    {% include snippet.html content=footer_example horizontal=true more=true %}
+
+    {% include variables.html %}
+  </div>
+</section>

@@ -1,0 +1,369 @@
+---
+title: Dropdown
+layout: documentation
+doc-tab: components
+doc-subtab: dropdown
+---
+
+{% capture dropdown_example %}
+<div class="dropdown is-active">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Dropdown button</span>
+      <span class="icon is-small">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="#" class="dropdown-item">
+        Dropdown item
+      </a>
+      <a class="dropdown-item">
+        Other dropdown item
+      </a>
+      <a href="#" class="dropdown-item is-active">
+        Active dropdown item
+      </a>
+      <a href="#" class="dropdown-item">
+        Other dropdown item
+      </a>
+      <hr class="dropdown-divider">
+      <a href="#" class="dropdown-item">
+        With a divider
+      </a>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture dropdown_content_example %}
+<div class="dropdown is-active">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+      <span>Content</span>
+      <span class="icon is-small">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+      </div>
+      <hr class="dropdown-divider">
+      <div class="dropdown-item">
+        <p>You simply need to use a <code>&lt;div&gt;</code> instead.</p>
+      </div>
+      <hr class="dropdown-divider">
+      <a href="#" class="dropdown-item">
+        This is a link
+      </a>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture dropdown_click_example %}
+<div class="dropdown">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+      <span>Click me</span>
+      <span class="icon is-small">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+    <div class="dropdown-content">
+      <a href="#" class="dropdown-item">
+        Overview
+      </a>
+      <a href="#" class="dropdown-item">
+        Modifiers
+      </a>
+      <a href="#" class="dropdown-item">
+        Grid
+      </a>
+      <a href="#" class="dropdown-item">
+        Form
+      </a>
+      <a href="#" class="dropdown-item">
+        Elements
+      </a>
+      <a href="#" class="dropdown-item">
+        Components
+      </a>
+      <a href="#" class="dropdown-item">
+        Layout
+      </a>
+      <hr class="dropdown-divider">
+      <a href="#" class="dropdown-item">
+        More
+      </a>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture dropdown_info_example %}
+<div class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span>Hover me</span>
+      <span class="icon is-small">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture dropdown_active_example %}
+<div class="dropdown is-active">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span>Active!!</span>
+      <span class="icon is-small">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu8" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture dropdown_left_example %}
+<div class="dropdown is-active">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu5">
+      <span>Left aligned</span>
+      <span class="icon is-small">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu5" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <p>The dropdown is <strong>left-aligned</strong> by default.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture dropdown_right_example %}
+<div class="dropdown is-right is-active">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu6">
+      <span>Right aligned</span>
+      <span class="icon is-small">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu6" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <p>Add the <code>is-right</code> modifier for a <strong>right-aligned</strong> dropdown.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture dropdown_up_example %}
+<div class="dropdown is-up">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu7">
+      <span>Dropup button</span>
+      <span class="icon is-small">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu7" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <p>You can add the <code>is-up</code> modifier to have a dropdown menu that appears above the dropdown button.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include subnav-components.html %}
+
+<section class="section">
+  <div class="container">
+
+    <h1 class="title">下拉框（Dropdown）</h1>
+    <h2 class="subtitle">
+      一个对于可发现内容的交互<strong>下拉菜单</strong>
+    </h2>
+    {%
+      include meta.html
+      new=true
+      since="0.4.4"
+      colors=false
+      sizes=false
+      variables=true
+    %}
+
+    <hr>
+
+    <div class="content">
+      <p>
+        <code>dropdown</code>组件是下拉按钮和下拉菜单的容器。
+      </p>
+      <ul>
+        <li>
+          <code>dropdown</code>是<strong>主</strong>容器
+          <ul>
+            <li>
+              <code>dropdown-trigger</code>是一个<code>button</code>的容器
+            </li>
+            <li>
+              <code>dropdown-menu</code>可以切换的菜单，默认是<strong>隐藏的</strong>
+              <ul>
+                <li>
+                  <code>dropdown-content</code>下拉菜单<strong>盒子</strong>，带有白色背景和阴影
+                  <ul>
+                    <li>
+                      <code>dropdown-item</code>下拉菜单<strong>单个项目</strong>的容器，可以包括一个<code>a</code>或者一个<code>div</code>
+                    </li>
+                    <li>
+                      <code>dropdown-divider</code>一个<strong>水平分隔线</strong>来分离下拉菜单
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="columns">
+      <div class="column is-half">
+        {{dropdown_example}}
+      </div>
+      <div class="column is-half highlight-full">
+        {% highlight html %}{{dropdown_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    {% include anchor.html name="下拉框内容（Dropdown content）" %}
+
+    <div class="content">
+      <p>
+        当你在<code>dropdown-item</code>放置链接时，可以使用<code>&lt;a&gt;</code>，你同样可以通过使用<code>&lt;div&gt;</code>来放置<strong>所有类型的文本内容</strong>。
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column is-half">
+        {{dropdown_content_example}}
+      </div>
+      <div class="column is-half">
+        {% highlight html %}{{dropdown_content_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    {% include anchor.html name="（悬停切换）Hoverable or Toggable" %}
+
+    <div class="content">
+      <p>
+       <code>dropdown</code>组件有<strong>2个可选类</strong>
+      </p>
+      <ul>
+        <li>
+          <code>is-hoverable</code>：当鼠标<strong>悬停（hovering）</strong>在<code>dropdown-trigger</code>时，下拉菜单就会显示
+        </li>
+        <li>
+          <code>is-active</code>：下拉才当会<strong>一直显示</strong>
+        </li>
+      </ul>
+    </div>
+
+    <div class="message is-success">
+      <p class="message-body">
+        当<code>:hover</code>可以使用，<code>is-active</code>类可以供用户通过<strong>JavaScript</strong>来控制下拉菜单的显示与否。</strong>.
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column is-half">
+        {{dropdown_click_example}}{{dropdown_info_example}}{{dropdown_active_example}}
+      </div>
+      <div class="column is-half">
+        {% highlight html %}{{dropdown_click_example}}{{dropdown_info_example}}{{dropdown_active_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    {% include anchor.html name="靠右（Right aligned）" %}
+
+    <div class="content">
+      <p>
+        你可以通过添加<code>is-right</code>修饰器来获取一个<strong>靠右的</strong>下拉菜单
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column is-half">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              {{dropdown_left_example}}
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              {{dropdown_right_example}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-half">
+        {% highlight html %}{{dropdown_right_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    {% include anchor.html name="上拉菜单（Dropup）" %}
+
+    {% include elements/new-tag.html version="0.5.4" %}
+
+    <div class="content">
+      <p>
+        你可以添加<code>is-up</code>修饰器来让一个菜单出现在按钮的上方。
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column is-half">
+        {{ dropdown_up_example }}
+      </div>
+      <div class="column is-half">
+        {% highlight html %}{{dropdown_up_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    {% include variables.html type='组件' %}
+
+  </div>
+</section>

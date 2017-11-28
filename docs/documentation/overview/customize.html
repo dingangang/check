@@ -1,0 +1,100 @@
+---
+title: Customize Bulma
+layout: documentation
+doc-tab: overview
+doc-subtab: customize
+---
+
+{% capture sass %}
+// 1. 引入初始化变量
+@import "../sass/utilities/initial-variables"
+
+// 2. 设定自己的变量
+// 升级覆盖变量$blue
+$blue: #72d0eb
+// 添加$pink和其反向
+$pink: #ffb3b3
+$pink-invert: #fff
+// 添加字体样式
+$family-serif: "Merriweather", "Georgia", serif
+
+// 3. 设定衍生的变量
+// 使用新的pink变量来取代primary
+$primary: $pink
+$primary-invert: $pink-invert
+//  将现有的orange变量来代替项目的danger变量颜色
+$danger: $orange
+// 使用新的字体设定
+$family-primary: $family-serif
+
+// 4. 引入其他的Bulma文件
+@import "../bulma"
+{% endcapture %}
+
+{% include subnav-overview.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">使用Sass来进行定制</h1>
+    <h2 class="subtitle">使用一些简单的 <strong>变量集合</strong> 来定制 <strong>自己的主题</strong> </h2>
+
+    <hr>
+
+    <div class="content">
+      <p>如果你对 <a href="http://sass-lang.com/">Sass</a> 比较熟悉，并且想通过自己的颜色和变量来 <strong>定制</strong> Bulma , 只需要通过 <strong>npm</strong> 来安装Bulma :</p>
+    </div>
+
+    <article class="media is-large">
+      <div class="media-left">
+        <p class="title is-5">1</p>
+      </div>
+      <div class="media-content">
+        <p class="title is-5">
+          <strong>下载</strong> 项目源文件:
+        </p>
+        {% highlight bash %}npm install bulma{% endhighlight %}
+        <div class="content">或者从GitHub库下载: <a href="https://github.com/jgthms/bulma">https://github.com/jgthms/bulma</a></div>
+      </div>
+    </article>
+
+    <article class="media is-large">
+      <div class="media-left">
+        <p class="title is-5">2</p>
+      </div>
+      <div class="media-content">
+        <p class="title is-5">
+          <strong>设定</strong>自己的变量
+        </p>
+        <p class="subtitle is-6">
+          添加自己的颜色、字体等来覆盖Bulma的默认样式。首先在项目文档中新建一个app.sass与bulma.sass同目录，app.sass代码如下：
+        </p>
+        <div class="highlight-full">
+          {% highlight sass %}{{ sass }}{% endhighlight %}
+        </div>
+        <div class="content">
+          在项目文件中package.json，修改"build-sass": "node-sass --output-style expanded --source-map true app.sass css/bulma.css"。即指定对应的编译文件为用户自定义的app.sass。然后运行
+        </div>
+        {% highlight bash %}npm run build{% endhighlight %}
+        <p>即可获取定以后的bulma.css</p>
+      </div>
+    </article>
+
+    <article class="media is-large">
+      <div class="media-left">
+        <p class="title is-5">3</p>
+      </div>
+      <div class="media-content">
+        <p class="title is-5">
+          对比<strong>结果</strong>: 定制前和定制后
+        </p>
+        <p class="subtitle is-6">
+          因为<code>$blue</code> 已经被更新,所以<code>$blue-invert</code> 会通过<strong>函数</strong><code>$blue-invert: findColorInvert($blue)</code>自动计算生成,<code>$blue-invert</code>现在是黑色的而不是白色。</p>
+        </p>
+        <figure>
+          <img width="640" height="640" src="{{site.url}}/images/customize-before.png" alt="Customizing Bulma with Sass">
+          <img width="640" height="640" src="{{site.url}}/images/customize-after.png" alt="Customizing Bulma with Sass">
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>

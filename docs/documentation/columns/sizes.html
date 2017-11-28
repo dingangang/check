@@ -1,0 +1,608 @@
+---
+title: Column sizes
+layout: documentation
+doc-tab: columns
+doc-subtab: sizes
+---
+
+{% capture columns_sizes %}
+<div class="columns">
+  <div class="column is-four-fifths">is-four-fifths</div>
+  <div class="column">Auto</div>
+  <div class="column">Auto</div>
+</div>
+
+<div class="columns">
+  <div class="column is-three-quarters">is-three-quarters</div>
+  <div class="column">Auto</div>
+  <div class="column">Auto</div>
+</div>
+
+<div class="columns">
+  <div class="column is-two-thirds">is-two-thirds</div>
+  <div class="column">Auto</div>
+  <div class="column">Auto</div>
+</div>
+
+<div class="columns">
+  <div class="column is-three-fifths">is-three-fifths</div>
+  <div class="column">Auto</div>
+  <div class="column">Auto</div>
+</div>
+
+<div class="columns">
+  <div class="column is-half">is-half</div>
+  <div class="column">Auto</div>
+  <div class="column">Auto</div>
+</div>
+
+<div class="columns">
+  <div class="column is-two-fifths">is-two-fifths</div>
+  <div class="column">Auto</div>
+  <div class="column">Auto</div>
+</div>
+
+<div class="columns">
+  <div class="column is-one-third">is-one-third</div>
+  <div class="column">Auto</div>
+  <div class="column">Auto</div>
+</div>
+
+<div class="columns">
+  <div class="column is-one-quarter">is-one-quarter</div>
+  <div class="column">Auto</div>
+</div>
+
+<div class="columns">
+  <div class="column is-one-fifth">is-one-fifth</div>
+  <div class="column">Auto</div>
+  <div class="column">Auto</div>
+</div>
+{% endcapture %}
+
+{% capture columns_offset %}
+<div class="columns is-mobile">
+  <div class="column is-half is-offset-one-quarter"></div>
+</div>
+
+<div class="columns is-mobile">
+  <div class="column is-three-fifths is-offset-one-fifth"></div>
+</div>
+
+<div class="columns is-mobile">
+  <div class="column is-4 is-offset-8"></div>
+</div>
+
+<div class="columns is-mobile">
+  <div class="column is-11 is-offset-1"></div>
+</div>
+{% endcapture %}
+
+{% capture columns_narrow %}
+<div class="columns">
+  <div class="column is-narrow">
+    <div class="box" style="width: 200px;">
+      <p class="title is-5">Narrow column</p>
+      <p class="subtitle">This column is only 200px wide.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="box">
+      <p class="title is-5">Flexible column</p>
+      <p class="subtitle">This column will take up the remaining space available.</p>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include subnav-columns.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">列尺寸（Column sizes）</h1>
+    <h2 class="subtitle">
+      <strong>单独的</strong>定义每一列的<strong>尺寸</strong>
+    </h2>
+
+    <hr>
+
+    <div class="content">
+      <p>如果你需要单独改变某一列的<strong>尺寸</strong>，你可以使用以下类:</p>
+      <ul>
+        <li>
+          <code>is-three-quarters</code>
+        </li>
+        <li>
+          <code>is-two-thirds</code>
+        </li>
+        <li>
+          <code>is-half</code>
+        </li>
+        <li>
+          <code>is-one-third</code>
+        </li>
+        <li>
+          <code>is-one-quarter</code>
+        </li>
+      </ul>
+      <p><em>其他的</em>会自动填充 <strong>剩余的</strong>空白部分。</p>
+    </div>
+
+    {% include elements/new-tag.html version="0.6.1" %}
+
+    <div class="content">
+      <p>你现在可以使用以下类来按<code>20%</code>分割:</p>
+      <ul>
+        <li>
+          <code>is-four-fifths</code>
+        </li>
+        <li>
+          <code>is-three-fifths</code>
+        </li>
+        <li>
+          <code>is-two-fifths</code>
+        </li>
+        <li>
+          <code>is-one-fifth</code>
+        </li>
+      </ul>
+    </div>
+
+    <div class="columns">
+      <div class="column is-four-fifths">
+        <p class="bd-notification is-info">
+          <code class="html">is-four-fifths</code>
+        </p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">Auto</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">Auto</p>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-three-quarters">
+        <p class="bd-notification is-info">
+          <code class="html">is-three-quarters</code>
+        </p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">Auto</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">Auto</p>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-two-thirds">
+        <p class="bd-notification is-info">
+          <code class="html">is-two-thirds</code>
+        </p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">Auto</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">Auto</p>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-three-fifths">
+        <p class="bd-notification is-info">
+          <code class="html">is-three-fifths</code>
+        </p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">Auto</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">Auto</p>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-half">
+        <p class="bd-notification is-info">
+          <code class="html">is-half</code>
+        </p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">Auto</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">Auto</p>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-two-fifths">
+        <p class="bd-notification is-info">
+          <code class="html">is-two-fifths</code>
+        </p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">Auto</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">Auto</p>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-one-third">
+        <p class="bd-notification is-info">
+          <code class="html">is-one-third</code>
+        </p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">Auto</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">Auto</p>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-one-quarter">
+        <p class="bd-notification is-info">
+          <code class="html">is-one-quarter</code>
+        </p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">Auto</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">Auto</p>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <p class="bd-notification is-info">
+          <code class="html">is-one-fifth</code>
+        </p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success">Auto</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning">Auto</p>
+      </div>
+    </div>
+
+    <div class="highlight-full">
+      {% highlight html %}{{ columns_sizes }}{% endhighlight %}
+    </div>
+
+    {% include anchor.html name="12列系统（12 columns system）" %}
+
+    <div class="content">
+      <p>把网格分割成<strong>12</strong>列，以下是每个不同的分类:</p>
+      <ul>
+        <li><code>is-2</code></li>
+        <li><code>is-3</code></li>
+        <li><code>is-4</code></li>
+        <li><code>is-5</code></li>
+        <li><code>is-6</code></li>
+        <li><code>is-7</code></li>
+        <li><code>is-8</code></li>
+        <li><code>is-9</code></li>
+        <li><code>is-10</code></li>
+        <li><code>is-11</code></li>
+      </ul>
+    </div>
+
+    <div class="message is-info">
+      <p class="message-header">命名规定</p>
+      <p class="message-body">每个修饰器的类名后都跟随<strong>12列中所占据的列数</strong>。如果你需要12列系统中7列这么宽,使用<code>is-7</code>。</p>
+    </div>
+
+    <div class="columns">
+      <div class="column is-2">
+        <p class="bd-notification is-info"><code>is-2</code></p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-3">
+        <p class="bd-notification is-info"><code>is-3</code></p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-4">
+        <p class="bd-notification is-info"><code>is-4</code></p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-5">
+        <p class="bd-notification is-info"><code>is-5</code></p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-6">
+        <p class="bd-notification is-info"><code>is-6</code></p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-7">
+        <p class="bd-notification is-info"><code>is-7</code></p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-8">
+        <p class="bd-notification is-info"><code>is-8</code></p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-9">
+        <p class="bd-notification is-info"><code>is-9</code></p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-10">
+        <p class="bd-notification is-info"><code>is-10</code></p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-warning has-text-centered">1</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-11">
+        <p class="bd-notification is-info"><code>is-11</code></p>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-success has-text-centered">1</p>
+      </div>
+    </div>
+
+    {% include anchor.html name="偏移（Offset）" %}
+
+    <div class="content">
+      <p>
+       当你使用<em>空白列</em> (如<code>&lt;div class="column"&gt;&lt;/div&gt;</code>)在元素<code>.column</code>旁边构建水平空白时,你也可以用<strong>offset</strong>修饰器如<code>.is-offset-x</code>:
+      </p>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-half is-offset-one-quarter">
+        <p class="bd-notification is-info">
+          <code class="html">is-half</code><br>
+          <code class="html">is-offset-one-quarter</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <p class="bd-notification is-info">
+          <code class="html">is-three-fifths</code><br>
+          <code class="html">is-offset-one-fifth</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-4 is-offset-8">
+        <p class="bd-notification is-info">
+          <code class="html">is-4</code><br>
+          <code class="html">is-offset-8</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-11 is-offset-1">
+        <p class="bd-notification is-info">
+          <code class="html">is-11</code><br>
+          <code class="html">is-offset-1</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="highlight-full">
+      {% highlight html %}{{ columns_offset }}{% endhighlight %}
+    </div>
+
+    {% include anchor.html name="窄列（Narrow column）" %}
+
+    <div class="content">
+      <p>如果你想要某一列只占据<strong>它所需要的空间</strong>,那么可以使用<code>is-narrow</code>修饰器。其他的列会占据剩余的空白。</p>
+    </div>
+
+    <div class="columns">
+      <div class="column is-narrow">
+        <div class="box" style="width: 200px;">
+          <p class="title is-5">Narrow column</p>
+          <p class="subtitle">这一列行内样式指定宽200px</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="box">
+          <p class="title is-5">Flexible column</p>
+          <p class="subtitle">This column will take up the remaining space available.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-full">
+      {% highlight html %}{{ columns_narrow }}{% endhighlight %}
+    </div>
+
+    <div class="content">
+      <p>对于这些尺寸修饰器，你也可以根据不同的<strong>断点</strong>来添加样式补充:</p>
+      <ul>
+        <li>
+          <code>is-narrow-mobile</code>
+        </li>
+        <li>
+          <code>is-narrow-tablet</code>
+        </li>
+        <li>
+          <code>is-narrow-desktop</code>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<nav class="navbar has-shadow">
+  <div class="container">
+    <div class="navbar-tabs">
+      <a class="navbar-item is-tab {% if page.doc-subtab == 'general' %}is-active{% endif %}" href="{{ site.url }}/documentation/form/general/">
+        概览
+      </a>
+      <a class="navbar-item is-tab {% if page.doc-subtab == 'input' %}is-active{% endif %}" href="{{ site.url }}/documentation/form/input/">
+        输入框
+      </a>
+      <a class="navbar-item is-tab {% if page.doc-subtab == 'textarea' %}is-active{% endif %}" href="{{ site.url }}/documentation/form/textarea/">
+        文本域
+      </a>
+      <a class="navbar-item is-tab {% if page.doc-subtab == 'select' %}is-active{% endif %}" href="{{ site.url }}/documentation/form/select/">
+        下拉选择
+      </a>
+      <a class="navbar-item is-tab {% if page.doc-subtab == 'checkbox' %}is-active{% endif %}" href="{{ site.url }}/documentation/form/checkbox/">
+        复选框
+      </a>
+      <a class="navbar-item is-tab {% if page.doc-subtab == 'radio' %}is-active{% endif %}" href="{{ site.url }}/documentation/form/radio/">
+        单选框
+      </a>
+      <a class="navbar-item is-tab {% if page.doc-subtab == 'file' %}is-active{% endif %}" href="{{ site.url }}/documentation/form/file/">
+        文件
+        <span class="tag is-success" style="margin-left: 1em;">
+          New!
+        </span>
+      </a>
+    </div>
+  </div>
+</nav>

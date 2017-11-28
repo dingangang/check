@@ -1,0 +1,79 @@
+---
+title: Nesting columns
+layout: documentation
+doc-tab: columns
+doc-subtab: nesting
+---
+
+{% include subnav-columns.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">嵌套（Nesting columns）</h1>
+    <h2 class="subtitle">一种简单的方式来构建<strong>响应式列布局</strong></h2>
+    <hr>
+
+    <div class="content">
+      <p>
+        你可以<strong>嵌套</strong>列来获取更多的灵活性。你只需要按照下面的结构布局:
+      </p>
+      <ul>
+        <li>
+          <code>columns</code>: 顶层列布局容器
+          <ul>
+            <li>
+              <code>column</code>
+              <ul>
+                <li>
+                  <code>columns</code>: 嵌套列容器布局
+                  <ul>
+                    <li>
+                      <code>column</code> 更多...
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        嵌套布局和<a href="{{ site.url }}/documentation/columns/options/#multiline">多行列布局（multiline columns）</a> 是在HTML的<strong>顺序</strong>：所有的<strong class="has-text-info">blue</strong>列会一直在<strong class="has-text-danger">red</strong><em>之前 </em>。调整显示器到一个更小的视口来观察变化。
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <p class="bd-notification is-info">First column</p>
+        <div class="columns is-mobile">
+          <div class="column">
+            <p class="bd-notification is-info">First nested column</p>
+          </div>
+          <div class="column">
+            <p class="bd-notification is-info">Second nested column</p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <p class="bd-notification is-danger">Second column</p>
+        <div class="columns is-mobile">
+          <div class="column is-half">
+            <p class="bd-notification is-danger">50%</p>
+          </div>
+          <div class="column">
+            <p class="bd-notification is-danger">Auto</p>
+          </div>
+          <div class="column">
+            <p class="bd-notification is-danger">Auto</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <p>
+        多行列布局会有<strong>间隔</strong>在每一<strong>行</strong>之间。
+      </p>
+    </div>
+  </div>
+</section>

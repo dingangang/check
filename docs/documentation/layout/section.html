@@ -1,0 +1,43 @@
+---
+title: Section
+layout: documentation
+doc-tab: layout
+doc-subtab: section
+---
+
+{% include subnav-layout.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">章节（Section）</h1>
+    <h2 class="subtitle">
+      一个简单的容器将页面分成不同的<strong>部分（sections）</strong>,就像现在你在浏览的这个页面
+    </h2>
+
+    <hr>
+
+    <div class="content">
+      <p>用章节（section）作为<code>body</code>的<strong>直接</strong>子元素。</p>
+    </div>
+
+{% highlight html %}
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Section</h1>
+      <h2 class="subtitle">
+        A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+      </h2>
+    </div>
+  </section>
+</body>
+{% endhighlight %}
+
+    <div class="content">
+      <p>你可以使用<code>is-medium</code>和<code>is-large</code>来改变<strong>空间</strong>.</p>
+    </div>
+
+    {% include variables.html %}
+
+  </div>
+</section>

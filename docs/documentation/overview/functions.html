@@ -1,0 +1,236 @@
+---
+title: Functions
+layout: documentation
+doc-tab: overview
+doc-subtab: functions
+---
+
+{% include subnav-overview.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">函数（Functions）</h1>
+    <h2 class="subtitle">工具函数，用来动态计算颜色和其他值</h2>
+
+    <hr>
+
+    <div class="content">
+      <p>Bulma使用了3个定制函数来辅助定义值和颜色:</p>
+      <ul>
+        <li><code>powerNumber($number, $exp)</code>:计算暴露于另外一个数字的值。返回一个数字。</li>
+        <li><code>colorLuminance($color)</code>:定义一个颜色属于暗还是明，返回一个0~1之间的小数，当数值<=0.5时是暗，当数值>=0.5时是明</li>
+        <li><code>findColorInvert($color)</code>:返回70%透明的黑色或者100%不透明的白色，取决于颜色的亮度。</li>
+      </ul>
+    </div>
+
+    {% include anchor.html name="The <code>findColorInvert()</code> function" %}
+
+    <div class="content">
+      <p>函数<code>findColorInvert($color)</code>输入值是<strong>一种颜色</strong>输出是<strong>黑色</strong> <code>rgba(#000, 0.7)</code>或者<strong>white</strong> <code>#fff</code>:</p>
+      <ul>
+        <li>若<code>colorLuminance($color) > 0.55</code>,则返回<code>rgba(#000, 0.7)</code></li>
+        <li>否则返回为<code>#fff</code></li>
+      </ul>
+      <p>其目的是为了确保输入颜色作为背景色情况下的<em>文本 </em><strong>易读性</strong></p>
+      <table class="table is-bordered">
+        <thead>
+          <tr>
+            <th>color</th>
+            <th>color luminance</th>
+            <th>findColorInvert()</th>
+            <th>result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="bd-color" style="background: #00d1b2;"></span>
+              <code>#00d1b2</code>
+            </td>
+            <td>
+              <code>0.52831</code>
+            </td>
+            <td>
+              <span class="bd-color" style="background: #fff;"></span>
+              <code>#fff</code>
+            </td>
+            <td>
+              <a class="button" style="background: #00d1b2; border-color: #00d1b2; color: #fff;">
+                Button
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="bd-color" style="background: #3273dc;"></span>
+              <code>#3273dc</code>
+            </td>
+            <td>
+              <code>0.23119</code>
+            </td>
+            <td>
+              <span class="bd-color" style="background: #fff;"></span>
+              <code>#fff</code>
+            </td>
+            <td>
+              <a class="button" style="background: #3273dc; border-color: #3273dc; color: #fff;">
+                Button
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="bd-color" style="background: #23d160;"></span>
+              <code>#23d160</code>
+            </td>
+            <td>
+              <code>0.51067</code>
+            </td>
+            <td>
+              <span class="bd-color" style="background: #fff;"></span>
+              <code>#fff</code>
+            </td>
+            <td>
+              <a class="button" style="background: #23d160; border-color: #23d160; color: #fff;">
+                Button
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="bd-color" style="background: #ffdd57;"></span>
+              <code>#ffdd57</code>
+            </td>
+            <td>
+              <code>0.76863</code>
+            </td>
+            <td>
+              <span class="bd-color" style="background: rgba(0, 0, 0, 0.7);"></span>
+              <code>rgba(0, 0, 0, 0.7)</code>
+            </td>
+            <td>
+              <a class="button" style="background: #ffdd57; border-color: #ffdd57; color: rgba(0, 0, 0, 0.7);">
+                Button
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="bd-color" style="background: #ff3860;"></span>
+              <code>#ff3860</code>
+            </td>
+            <td>
+              <code>0.27313</code>
+            </td>
+            <td>
+              <span class="bd-color" style="background: #fff;"></span>
+              <code>#fff</code>
+            </td>
+            <td>
+              <a class="button" style="background: #ff3860; border-color: #ff3860; color: #fff;">
+                Button
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="bd-color" style="background: #ffb3b3;"></span>
+              <code>#ffb3b3</code>
+            </td>
+            <td>
+              <code>0.61796</code>
+            </td>
+            <td>
+              <span class="bd-color" style="background: rgba(0,0,0,0.7);"></span>
+              <code>rgba(0,0,0,0.7)</code>
+            </td>
+            <td>
+              <a class="button" style="background: #ffb3b3; border-color: #ffb3b3; color: rgba(0,0,0,0.7);">
+                Button
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="bd-color" style="background: #ffbc6b;"></span>
+              <code>#ffbc6b</code>
+            </td>
+            <td>
+              <code>0.63053</code>
+            </td>
+            <td>
+              <span class="bd-color" style="background: rgba(0,0,0,0.7);"></span>
+              <code>rgba(0,0,0,0.7)</code>
+            </td>
+            <td>
+              <a class="button" style="background: #ffbc6b; border-color: #ffbc6b; color: rgba(0,0,0,0.7);">
+                Button
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="bd-color" style="background: hsl(294, 71%, 79%);"></span>
+              <code>hsl(294, 71%, 79%)</code>
+            </td>
+            <td>
+              <code>0.5529</code>
+            </td>
+            <td>
+              <span class="bd-color" style="background: rgba(0,0,0,0.7);"></span>
+              <code>rgba(0,0,0,0.7)</code>
+            </td>
+            <td>
+              <a class="button" style="background: hsl(294, 71%, 79%); border-color: hsl(294, 71%, 79%); color: rgba(0,0,0,0.7);">
+                Button
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        当颜色亮度接近<code>0.55</code>阈值,可以<strong>重写</strong><code>findColorInvert()</code>函数,也可以<strong>手动</strong>指定颜色。
+        <br>
+        比如说当颜色是<span class="bd-color" style="background: hsl(294, 71%, 79%); float: none; height: 16px; width: 16px; margin-right: 0; vertical-align: middle;"></span> 的亮度值是<code>0.5529</code>此时，可以通过函数判定也可以手动指定，两者皆可:
+      </p>
+      <table class="table is-bordered">
+        <tbody>
+          <tr>
+            <th>
+              with <code>findColorInvert()</code>
+            </th>
+            <td>
+              <code>$purple-invert: findColorInvert($purple)</code>
+            </td>
+            <td>
+              <span class="bd-color" style="background: rgba(0,0,0,0.7);"></span>
+              <code>rgba(0,0,0,0.7)</code>
+            </td>
+            <td>
+              <a class="button" style="background: hsl(294, 71%, 79%); border-color: hsl(294, 71%, 79%); color: rgba(0,0,0,0.7);">
+                Button
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              with manual setting
+            </th>
+            <td>
+              <code>$purple-invert: #fff</code>
+            </td>
+            <td>
+              <span class="bd-color" style="background: #fff;"></span>
+              <code>#fff</code>
+            </td>
+            <td>
+              <a class="button" style="background: hsl(294, 71%, 79%); border-color: hsl(294, 71%, 79%); color: #fff;">
+                Button
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

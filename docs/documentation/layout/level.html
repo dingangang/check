@@ -1,0 +1,213 @@
+---
+title: Level
+layout: documentation
+doc-tab: layout
+doc-subtab: level
+---
+
+{% capture nav_example %}
+<!-- Main container -->
+<nav class="level">
+  <!-- Left side -->
+  <div class="level-left">
+    <div class="level-item">
+      <p class="subtitle is-5">
+        <strong>123</strong> posts
+      </p>
+    </div>
+    <div class="level-item">
+      <div class="field has-addons">
+        <p class="control">
+          <input class="input" type="text" placeholder="Find a post">
+        </p>
+        <p class="control">
+          <button class="button">
+            Search
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <div class="level-right">
+    <p class="level-item"><strong>All</strong></p>
+    <p class="level-item"><a>Published</a></p>
+    <p class="level-item"><a>Drafts</a></p>
+    <p class="level-item"><a>Deleted</a></p>
+    <p class="level-item"><a class="button is-success">New</a></p>
+  </div>
+</nav>
+{% endcapture %}
+
+{% capture nav_centered_example %}
+<nav class="level">
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Tweets</p>
+      <p class="title">3,456</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Following</p>
+      <p class="title">123</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Followers</p>
+      <p class="title">456K</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Likes</p>
+      <p class="title">789</p>
+    </div>
+  </div>
+</nav>
+{% endcapture %}
+
+{% capture nav_centered_bis_example %}
+<nav class="level">
+  <p class="level-item has-text-centered">
+    <a class="link is-info">Home</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info">Menu</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <img src="{{ site.url }}/images/bulma-type.png" alt="" style="height: 30px;">
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info">Reservations</a>
+  </p>
+  <p class="level-item has-text-centered">
+    <a class="link is-info">Contact</a>
+  </p>
+</nav>
+{% endcapture %}
+
+{% capture nav_mobile_example %}
+<nav class="level is-mobile">
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading is-size-7-mobile">Tweets</p>
+      <p class="title is-size-6-mobile">3,456</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading is-size-7-mobile">Following</p>
+      <p class="title is-size-6-mobile">123</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading is-size-7-mobile">Followers</p>
+      <p class="title is-size-6-mobile">456K</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading is-size-7-mobile">Likes</p>
+      <p class="title is-size-6-mobile">789</p>
+    </div>
+  </div>
+</nav>
+{% endcapture %}
+
+{% include subnav-layout.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">水平层（Level）</h1>
+    <h2 class="subtitle">一个多用途的<strong>水平放置层</strong>，其中可以放置几乎其他的所有元素</h2>
+
+    <hr>
+
+    <div class="content">
+      <p>其<strong>结构</strong>如下图所示:</p>
+      <ul>
+        <li>
+          <code>level</code>:主容器
+          <ul>
+            <li><code>level-left</code>左侧子元素，这个元素是<em>必须的</em>，哪怕是空的也需要放置。</li>
+            <li>
+              <code>level-right</code>右侧子元素。
+              <ul>
+                <li><code>level-item</code>独立元素</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>在<code>level-item</code>元素中,你可以放置<em>任意 </em>想放置的元素包括: 标题、标签或者是单纯的文字。无论你放置什么元素到Bulma<code>水平层（level)</code>中，它们总是<strong>垂直居中</strong>。</p>
+    </div>
+
+    <div class="bd-structure">
+      <nav class="level bd-structure-item bd-is-structure-container" title="level">
+        <div class="level-left bd-structure-item" title="level-left">
+          <div class="level-item">
+            <p class="subtitle is-5">
+              <strong>123</strong> posts
+            </p>
+          </div>
+          <div class="level-item">
+            <div class="field has-addons">
+              <p class="control">
+                <input class="input" type="text" placeholder="Find a post">
+              </p>
+              <p class="control">
+                <button class="button">
+                  Search
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="level-right bd-structure-item" title="level-right">
+          <p class="level-item">
+            <strong>All</strong>
+          </p>
+          <p class="level-item">
+            <a>Published</a>
+          </p>
+          <p class="level-item">
+            <a>Drafts</a>
+          </p>
+          <p class="level-item">
+            <a>Deleted</a>
+          </p>
+          <p class="level-item">
+            <a class="button is-success">
+              New
+            </a>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    {% include snippet.html content=nav_example horizontal=true more=true %}
+
+    {% include anchor.html name="居中的水平层（Centered level）" %}
+
+    <div class="content">
+      如果你想要一个<strong>居中水平层</strong>，你可以使用多个<code>level-item</code>作为<code>level</code>容器的<strong>直接子元素</strong>。
+    </div>
+
+    {% include snippet.html content=nav_centered_example horizontal=true more=true %}
+
+    {% include snippet.html content=nav_centered_bis_example horizontal=true more=true %}
+
+    {% include anchor.html name="移动端水平层（Mobile level）" %}
+
+    <div class="content">
+      默认的,出于空间的考虑，水平层在手机端显示的时候也变成了垂直堆叠。如果你想在手机端显示的时候也保留这种特性，那么就加上修饰符<code>is-mobile</code>到<code>level</code>容器.
+    </div>
+
+    {% include snippet.html content=nav_mobile_example horizontal=true more=true %}
+
+  </div>
+</section>

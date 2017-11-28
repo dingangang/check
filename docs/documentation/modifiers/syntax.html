@@ -1,0 +1,190 @@
+---
+title: Modifiers syntax
+layout: documentation
+doc-tab: modifiers
+doc-subtab: syntax
+---
+
+{% include subnav-modifiers.html %}
+
+{% capture button_example %}
+<a class="button">
+  Button
+</a>
+{% endcapture %}
+
+{% capture button_primary_example %}
+<a class="button is-primary">
+  Button
+</a>
+{% endcapture %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">修改器语法（Modifiers syntax）</h1>
+    <h2 class="subtitle">Bulma中许多元素都有<strong>可选择性</strong>的样式。要使用他们，你只需要把<strong>修改器类名</strong>增加到元素类中。
+    <br>
+    它们全部以<code>is-</code>或者<code>has-</code>开头。</h2>
+    <hr>
+    <div class="columns">
+      <div class="column">
+        <p>我们从一个简单的<strong>button</strong>开始。使用<code>"button"</code> CSS class:</p>
+      </div>
+      <div class="column">
+        <p>
+          {{button_example}}
+        </p>
+      </div>
+      <div class="column is-half">
+        {% highlight html %}{{button_example}}{% endhighlight %}
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <p>通过<strong>添加</strong><code>"is-primary"</code> CSS class,你可以修改<strong>颜色</strong>:</p>
+      </div>
+      <div class="column">
+        <p>
+          {{button_primary_example}}
+        </p>
+      </div>
+      <div class="column is-half">
+        {% highlight html %}{{button_primary_example}}{% endhighlight %}
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>你可以使用<strong>6种主要颜色</strong>的一种:</p>
+          <ul>
+            <li><code>is-primary</code></li>
+            <li><code>is-link</code></li>
+            <li><code>is-info</code></li>
+            <li><code>is-success</code></li>
+            <li><code>is-warning</code></li>
+            <li><code>is-danger</code></li>
+          </ul>
+        </div>
+      </div>
+      <div class="column">
+        <p class="field">
+          <a class="button is-primary">Button</a>
+        </p>
+        <p class="field">
+          <a class="button is-link">Button</a>
+        </p>
+        <p class="field">
+          <a class="button is-info">Button</a>
+        </p>
+        <p class="field">
+          <a class="button is-success">Button</a>
+        </p>
+        <p class="field">
+          <a class="button is-warning">Button</a>
+        </p>
+        <p class="field">
+          <a class="button is-danger">Button</a>
+        </p>
+      </div>
+      <div class="column is-half">
+        <div class="highlight-full">
+{% highlight html %}
+<a class="button is-primary">
+  Button
+</a>
+<a class="button is-info">
+  Button
+</a>
+<a class="button is-success">
+  Button
+</a>
+<a class="button is-warning">
+  Button
+</a>
+<a class="button is-danger">
+  Button
+</a>
+{% endhighlight %}
+        </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>你也可以选择不同的<strong>尺寸</strong>:</p>
+          <ul>
+            <li><code>is-small</code></li>
+            <li><code>is-medium</code></li>
+            <li><code>is-large</code></li>
+          </ul>
+        </div>
+      </div>
+      <div class="column">
+        <p class="field">
+          <a class="button is-small">Button</a>
+        </p>
+        <p class="field">
+          <a class="button">Button</a>
+        </p>
+        <p class="field">
+          <a class="button is-medium">Button</a>
+        </p>
+        <p class="field">
+          <a class="button is-large">Button</a>
+        </p>
+      </div>
+      <div class="column is-half">
+{% highlight html %}
+<a class="button is-small">
+  Button
+</a>
+<a class="button">
+  Button
+</a>
+<a class="button is-medium">
+  Button
+</a>
+<a class="button is-large">
+  Button
+</a>
+{% endhighlight %}
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>还可以选定<strong>风格</strong>或者<strong>状态</strong>:</p>
+          <ul>
+            <li><code>is-outlined</code></li>
+            <li><code>is-loading</code></li>
+            <li><code>[disabled]</code></li>
+          </ul>
+        </div>
+      </div>
+      <div class="column">
+        <p class="field">
+          <a class="button is-primary is-outlined">Button</a>
+        </p>
+        <p class="field">
+          <a class="button is-primary is-loading">Button</a>
+        </p>
+        <p class="field">
+          <a class="button is-primary" disabled>Button</a>
+        </p>
+      </div>
+      <div class="column is-half">
+{% highlight html %}
+<a class="button is-primary is-outlined">
+  Button
+</a>
+<a class="button is-primary is-loading">
+  Button
+</a>
+<a class="button is-primary" disabled>
+  Button
+</a>
+{% endhighlight %}
+      </div>
+    </div>
+  </div>
+</section>

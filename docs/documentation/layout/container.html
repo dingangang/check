@@ -1,0 +1,118 @@
+---
+title: Container
+layout: documentation
+doc-tab: layout
+doc-subtab: container
+---
+
+{% capture container_example %}
+<div class="container">
+  <div class="notification">
+    This container is <strong>centered</strong> on desktop.
+  </div>
+</div>
+{% endcapture %}
+
+{% capture container_fluid_example %}
+<div class="container is-fluid">
+  <div class="notification">
+    This container is <strong>fluid</strong>: it will have a 24px gap on either side, on any viewport size.
+  </div>
+</div>
+{% endcapture %}
+
+{% capture container_widescreen_example %}
+<div class="container is-widescreen">
+  <div class="notification">
+    This container is <strong>fullwidth</strong> <em>until</em> the <code>$widescreen</code> breakpoint.
+  </div>
+</div>
+{% endcapture %}
+
+{% capture container_fullhd_example %}
+<div class="container is-fullhd">
+  <div class="notification">
+    This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
+  </div>
+</div>
+{% endcapture %}
+
+{% include subnav-layout.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">容器（Container）</h1>
+    <h2 class="subtitle">
+      一个简单的<strong>容器</strong>来让你的内容居中
+    </h2>
+
+    <hr>
+
+    <div class="content">
+      <p><code>.container</code>类可以在任意内容中使用，但是更多的情况会是成为以下元素的的<strong>直接子元素</strong>:</p>
+      <ul>
+        <li><code>.navbar</code></li>
+        <li><code>.hero</code></li>
+        <li><code>.section</code></li>
+        <li><code>.footer</code></li>
+      </ul>
+      <p>
+        容器的<strong>断点</strong>会有一个<strong>偏移量</strong>由变量<code>$container-offset</code>来定义。默认的值为<code>60px</code>.
+      </p>
+      <p>容器的展示情况如下所示:</p>
+      <ul>
+        <li>当<code>$desktop</code> + <code>$container-offset</code> = <code>>= 1068px</code>它会有一个最大宽度（maximum width） <strong>960px</strong>并且会是<strong>水平居中</strong>.</li>
+        <li>on <code>$widescreen</code> + <code>$container-offset</code> = <code>>= 1260px</code>它会有一个最大宽度（maximum width） <strong>1152px</strong>.</li>
+        <li>on <code>$fullhd</code> + <code>$container-offset</code> = <code>>= 1452px</code>它会有一个最大宽度（maximum width） <strong>1344px</strong>.</li>
+      </ul>
+      <p>
+        变量<code>$gap</code> 的默认值为<code>24px</code>，但是它可以被修改。
+      </p>
+      <p>选择<strong>960</strong>, <strong>1152</strong>和<strong>1344</strong>这几个值的原因是他们可以被<strong>12</strong>和<strong>16</strong>除尽。</p>
+    </div>
+  </div>
+</section>
+
+<div class="bd-example is-fullwidth">
+  {{container_example}}
+</div>
+
+{% highlight html %}{{container_example}}{% endhighlight %}
+
+<section class="section">
+<div class="container">
+  <h3 class="title is-4">流体容器（Fluid container）</h3>
+  <div class="content">
+    <p>如果你不想容器有一个最大宽度，但是同时又想保留24px的左右外边距，那么把修饰器<code>is-fluid</code>添加到元素中:</p>
+  </div>
+</div>
+</section>
+
+<div class="bd-example is-fullwidth">
+  {{container_fluid_example}}
+</div>
+
+{% highlight html %}{{container_fluid_example}}{% endhighlight %}
+
+<section class="section">
+<div class="container">
+  <h3 class="title is-4">容器断点（Breakpoint containers）</h3>
+  <div class="content">
+    <p>
+      使用<code>.is-widescreen</code>和<code>.is-fullhd</code>修饰器, 你可以获取<em>满宽度的 </em>容器<strong>直到</strong>到达特定的断点。
+    </p>
+  </div>
+</div>
+</section>
+
+<div class="bd-example is-fullwidth">
+  {{container_widescreen_example}}
+</div>
+
+{% highlight html %}{{container_widescreen_example}}{% endhighlight %}
+
+<div class="bd-example is-fullwidth">
+  {{container_fullhd_example}}
+</div>
+
+{% highlight html %}{{container_fullhd_example}}{% endhighlight %}

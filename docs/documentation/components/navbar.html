@@ -1,0 +1,1025 @@
+---
+title: Navbar
+layout: documentation
+doc-tab: components
+doc-subtab: navbar
+---
+
+{% include subnav-components.html %}
+
+{% capture navbar_example %}
+{% include navbar.html id="bd-example" %}
+{% endcapture %}
+
+{% capture navbar_brand_example %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <!-- navbar items, navbar burger... -->
+  </div>
+</nav>
+{% endcapture %}
+
+{% capture navbar_burger_example %}
+<button class="button navbar-burger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+{% endcapture %}
+
+{% capture navbar_brand_items_example %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{ site.url }}">
+      <img src="{{ site.url }}/images/bulma-logo.png" alt="{{ site.title }}" width="112" height="28">
+    </a>
+
+    <button class="button navbar-burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+{% endcapture %}
+
+{% capture navbar_menu_example %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <!-- navbar items, navbar burger... -->
+  </div>
+  <div class="navbar-menu">
+    <!-- navbar start, navbar end -->
+  </div>
+</nav>
+{% endcapture %}
+
+{% capture navbar_menu_active_example %}
+<div class="navbar-menu">
+  <!-- hidden on mobile -->
+</div>
+
+<div class="navbar-menu is-active">
+  <!-- shown on mobile -->
+</div>
+{% endcapture %}
+
+{% capture navbar_start_end_example %}
+<div class="navbar-menu">
+  <div class="navbar-start">
+    <!-- navbar items -->
+  </div>
+
+  <div class="navbar-end">
+    <!-- navbar items -->
+  </div>
+</div>
+{% endcapture %}
+
+{% capture navbar_item_link_example %}
+<a class="navbar-item">
+  Home
+</a>
+{% endcapture %}
+
+{% capture navbar_item_brand_example %}
+<a class="navbar-item">
+  <img src="{{ site.url }}/images/bulma-logo.png" width="112" height="28" alt="Bulma">
+</a>
+{% endcapture %}
+
+{% capture navbar_item_dropdown_example %}
+<div class="navbar-item has-dropdown">
+  <a class="navbar-link">
+    Docs
+  </a>
+
+  <div class="navbar-dropdown">
+    <!-- Other navbar items -->
+  </div>
+</div>
+{% endcapture %}
+
+{% capture navbar_item_dropdown_bis_example %}
+<div class="navbar-dropdown">
+  <a class="navbar-item">
+    Overview
+  </a>
+</div>
+{% endcapture %}
+
+{% capture navbar_item_other_example %}
+<div class="navbar-item">
+  <div class="field is-grouped">
+    <p class="control">
+      <a class="button">
+        <span class="icon">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </span>
+        <span>Tweet</span>
+      </a>
+    </p>
+    <p class="control">
+      <a class="button is-primary">
+        <span class="icon">
+          <i class="fa fa-download" aria-hidden="true"></i>
+        </span>
+        <span>Download</span>
+      </a>
+    </p>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture navbar_transparent_example %}
+{% include navbar.html transparent=true boxed=true id="TransparentExample" %}
+{% endcapture %}
+
+{% capture navbar_dropdown_example %}
+<nav class="navbar" role="navigation" aria-label="dropdown navigation">
+  <div class="navbar-item has-dropdown">
+    <a class="navbar-link">
+      Docs
+    </a>
+
+    <div class="navbar-dropdown">
+      <a class="navbar-item">
+        Overview
+      </a>
+      <a class="navbar-item">
+        Elements
+      </a>
+      <a class="navbar-item">
+        Components
+      </a>
+      <hr class="navbar-divider">
+      <div class="navbar-item">
+        Version {{ site.version }}
+      </div>
+    </div>
+  </div>
+</nav>
+{% endcapture %}
+
+{% capture navbar_dropdown_hover_snippet %}
+<div class="navbar-item has-dropdown is-hoverable">
+  <!-- navbar-link, navbar-dropdown etc. -->
+</div>
+{% endcapture %}
+
+{% capture navbar_dropdown_hover_example %}
+<nav class="navbar" role="navigation" aria-label="dropdown navigation">
+  <div class="navbar-item has-dropdown is-hoverable">
+    <a class="navbar-link">
+      Docs
+    </a>
+
+    <div class="navbar-dropdown">
+      <a class="navbar-item">
+        Overview
+      </a>
+      <a class="navbar-item">
+        Elements
+      </a>
+      <a class="navbar-item">
+        Components
+      </a>
+      <hr class="navbar-divider">
+      <div class="navbar-item">
+        Version {{ site.version }}
+      </div>
+    </div>
+  </div>
+</nav>
+{% endcapture %}
+
+{% capture navbar_dropdown_active_snippet %}
+<div class="navbar-item has-dropdown is-active">
+  <!-- navbar-link, navbar-dropdown etc. -->
+</div>
+{% endcapture %}
+
+{% capture navbar_dropdown_active_example %}
+<nav class="navbar" role="navigation" aria-label="dropdown navigation">
+  <div class="navbar-item has-dropdown is-active">
+    <a class="navbar-link">
+      Docs
+    </a>
+
+    <div class="navbar-dropdown">
+      <a class="navbar-item">
+        Overview
+      </a>
+      <a class="navbar-item">
+        Elements
+      </a>
+      <a class="navbar-item">
+        Components
+      </a>
+      <hr class="navbar-divider">
+      <div class="navbar-item">
+        Version {{ site.version }}
+      </div>
+    </div>
+  </div>
+</nav>
+{% endcapture %}
+
+{% capture navbar_dropdown_right_snippet %}
+<div class="navbar-dropdown is-right">
+  <!-- navbar-item, navbar-divider etc. -->
+</div>
+{% endcapture %}
+
+{% capture navbar_dropdown_right_example %}
+<nav class="navbar" role="navigation" aria-label="dropdown navigation">
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-active">
+        <a class="navbar-link">
+          Left
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Overview
+          </a>
+          <a class="navbar-item">
+            Elements
+          </a>
+          <a class="navbar-item">
+            Components
+          </a>
+          <hr class="navbar-divider">
+          <div class="navbar-item">
+            Version {{ site.version }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item has-dropdown is-active">
+        <a class="navbar-link">
+          Right
+        </a>
+
+        <div class="navbar-dropdown is-right">
+          <a class="navbar-item">
+            Overview
+          </a>
+          <a class="navbar-item">
+            Elements
+          </a>
+          <a class="navbar-item">
+            Components
+          </a>
+          <hr class="navbar-divider">
+          <div class="navbar-item">
+            Version {{ site.version }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero is-primary">
+  <div class="hero-body">
+    <p class="title">
+      Documentation
+    </p>
+    <p class="subtitle">
+      Everything you need to <strong>create a website</strong> with Bulma
+    </p>
+  </div>
+</section>
+{% endcapture %}
+
+{% capture navbar_dropdown_default_example %}
+<nav class="navbar" role="navigation" aria-label="dropdown navigation">
+  <a class="navbar-item">
+    <img src="{{ site.url }}/images/bulma-logo.png" alt="{{ site.title }}" width="112" height="28">
+  </a>
+
+  <div class="navbar-item has-dropdown is-active">
+    <a class="navbar-link">
+      Docs
+    </a>
+
+    <div class="navbar-dropdown">
+      <a class="navbar-item">
+        Overview
+      </a>
+      <a class="navbar-item">
+        Elements
+      </a>
+      <a class="navbar-item">
+        Components
+      </a>
+      <hr class="navbar-divider">
+      <div class="navbar-item">
+        Version {{ site.version }}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero is-primary">
+  <div class="hero-body">
+    <p class="title">
+      Documentation
+    </p>
+    <p class="subtitle">
+      Everything you need to <strong>create a website</strong> with Bulma
+    </p>
+  </div>
+</section>
+{% endcapture %}
+
+{% capture navbar_dropdown_boxed_example %}
+<nav class="navbar is-transparent" role="navigation" aria-label="dropdown navigation">
+  <a class="navbar-item">
+    <img src="{{ site.url }}/images/bulma-logo.png" alt="{{ site.title }}" width="112" height="28">
+  </a>
+
+  <div class="navbar-item has-dropdown is-active">
+    <a class="navbar-link">
+      Docs
+    </a>
+
+    <div class="navbar-dropdown is-boxed">
+      <a class="navbar-item">
+        Overview
+      </a>
+      <a class="navbar-item">
+        Elements
+      </a>
+      <a class="navbar-item">
+        Components
+      </a>
+      <hr class="navbar-divider">
+      <div class="navbar-item">
+        Version {{ site.version }}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <p class="title">
+      Documentation
+    </p>
+    <p class="subtitle">
+      Everything you need to <strong>create a website</strong> with Bulma
+    </p>
+  </div>
+</section>
+{% endcapture %}
+
+{% capture navbar_dropdown_item_active_example %}
+<nav class="navbar" role="navigation" aria-label="dropdown navigation">
+  <a class="navbar-item">
+    <img src="{{ site.url }}/images/bulma-logo.png" alt="{{ site.title }}" width="112" height="28">
+  </a>
+
+  <div class="navbar-item has-dropdown is-active">
+    <a class="navbar-link">
+      Docs
+    </a>
+
+    <div class="navbar-dropdown">
+      <a class="navbar-item">
+        Overview
+      </a>
+      <a class="navbar-item is-active">
+        Elements
+      </a>
+      <a class="navbar-item">
+        Components
+      </a>
+      <hr class="navbar-divider">
+      <div class="navbar-item">
+        Version {{ site.version }}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero is-primary">
+  <div class="hero-body">
+    <p class="title">
+      Documentation
+    </p>
+    <p class="subtitle">
+      Everything you need to <strong>create a website</strong> with Bulma
+    </p>
+  </div>
+</section>
+{% endcapture %}
+
+{% capture navbar_divider_example %}
+<hr class="navbar-divider">
+{% endcapture %}
+
+{% capture navbar_js_html %}
+<button class="button navbar-burger" data-target="navMenu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<div class="navbar-menu" id="navMenu">
+  <!-- navbar-start, navbar-end... -->
+</div>
+{% endcapture %}
+
+{% capture navbar_js_code %}
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+{% endcapture %}
+
+{% capture navbar_color_markup %}
+<nav class="navbar is-primary">
+  <!-- navbar brand, navbar menu... -->
+</nav>
+{% endcapture %}
+
+<section class="section">
+  <div class="container">
+
+    <h1 class="title is-spaced">Navbar</h1>
+    <h2 class="subtitle">
+      一个响应式的水平<strong>导航条</strong>，支持图片、链接、按钮和下拉菜单
+    </h2>
+    {%
+      include meta.html
+      new=true
+      since="0.4.3"
+      colors=true
+      sizes=false
+      variables=true
+    %}
+
+    <hr>
+
+    <div class="message is-success">
+      <div class="message-body">
+        <p>新的<code>navbar</code>已经取代了弃用的<code>nav</code>组件，你可以点击<a href="{{ site.url }}/documentation/components/nav/">这里</a>查看老版本的导航条</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <p>
+        <code>navbar</code>组件是响应式和多用的水平导航条，其结构如下：
+      </p>
+      <ul>
+        <li>
+          <code>navbar</code><strong>主</strong>容器
+          <ul>
+            <li>
+              <code>navbar-brand</code>位于<strong>左侧</strong>,，<strong class="has-text-success">一直可见</strong>，通常会包含<strong>logo</strong>或者其他可选的链接与图标
+              <ul>
+                <li>
+                  <code>navbar-burger</code><strong>汉堡图标</strong> 在移动设备上来控制导航条的显示
+                </li>
+              </ul>
+            </li>
+            <li>
+              <code>navbar-menu</code>位于<strong>右侧</strong>，移动设备时隐藏，PC端则会显示
+              <ul>
+                <li>
+                  <code>navbar-start</code>菜单的<strong>左部分</strong>，PC端时，会出接着<code>navbar-brand</code>出现。
+                </li>
+                <li>
+                  <code>navbar-end</code>菜单的<strong>右部分</strong> ，会出现在导航条的尾部。
+                  <ul>
+                    <li>
+                      <code>navbar-item</code>导航条的<strong>单个项目</strong>，可以是<code>a</code>或者是一个<code>div</code>
+                      <ul>
+                        <li>
+                          <code>navbar-link</code>一个<strong>链接</strong>，带有箭头，作为下拉菜单的毗邻修饰
+                        </li>
+                        <li>
+                          <code>navbar-dropdown</code><strong>下拉菜单</strong>，可以包括<code>navbar-item</code>和分隔线
+                          <ul>
+                            <li>
+                              <code>navbar-divider</code><strong>水平分隔线</strong>来分隔<code>navbar-item</code>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    {% include anchor.html name="导航牌（Navbar brand）" %}
+
+    <div class="content">
+      <p>
+       <code>navbar-brand</code>是位于导航的左侧，它可以包括：
+      </p>
+      <ul>
+        <li>
+          很多的<code>navbar-item</code>
+        </li>
+        <li>
+          <code>navbar-burger</code>作为最后一个子元素
+        </li>
+      </ul>
+    </div>
+
+    {% highlight html %}{{navbar_brand_example}}{% endhighlight %}
+
+    <div class="content">
+      <p>
+        导航牌是<strong>一直显示的</strong>: 在移动设备端{% include bp/touch.html %}和PC端{% include bp/desktop.html %}。所以，通常只推荐使用少量的导航项目元素来避免在小的设备的时候水平方向<strong>溢出</strong>。
+      </p>
+    </div>
+
+    <div class="bd-example is-paddingless">
+      {{navbar_brand_items_example}}
+    </div>
+
+    {% highlight html %}{{navbar_brand_items_example}}{% endhighlight %}
+
+    <div class="content">
+      <p>
+        在PC端{% include bp/desktop.html %}，导航牌只会占据它需要的空间大小
+      </p>
+    </div>
+
+    {% include anchor.html name="导航汉堡按钮（Navbar burger）" %}
+
+    <div class="content">
+      <p>
+       <code>navbar-burger</code>是一个汉堡菜单，而且只<strong>移动端</strong>显示。它必须作为<code>navbar-brand</code>。的最后一个子元素。
+      </p>
+    </div>
+
+    <div class="bd-example is-paddingless">
+      <div class="navbar-burger" style="display: flex;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    {% highlight html %}{{ navbar_burger_example }}{% endhighlight %}
+
+    <div class="content">
+      <p>
+        你可以添加<code>is-active</code>修饰器将其变成一个×
+      </p>
+    </div>
+
+    <div class="bd-example is-paddingless">
+      <div class="navbar-burger is-active" style="display: flex;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    {% include anchor.html name="导航菜单（Navbar menu）" %}
+
+    <div class="content">
+      <p>
+       <code>navbar-menu</code>是导航牌的<strong>对应部分</strong>。因此，它必须作为<code>navbar</code>的直接子元素，作为<code>navbar-brand</code>的兄弟元素。
+      </p>
+    </div>
+
+    {% highlight html %}{{navbar_menu_example}}{% endhighlight %}
+
+    <div class="content">
+      <p>
+        <code>navbar-menu</code>会<strong>在移动设备上隐藏</strong> {% include bp/touch.html %}。你需要添加<code>is-active</code>修饰器来展示它。
+      </p>
+    </div>
+
+    {% highlight html %}{{navbar_menu_active_example}}{% endhighlight %}
+
+    <div class="content">
+      <p>
+        在PC端{% include bp/desktop.html %}，除了留给导航牌所需要占据的空间，<code>navbar-menu</code>会<strong>占据其他导航条可用空间</strong>，它有两个直接子元素：
+      </p>
+      <ul>
+        <li>
+          <code>navbar-start</code>
+        </li>
+        <li>
+          <code>navbar-end</code>
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div id="navbarJsExample" class="message is-info">
+      <h4 class="message-header">Javascript toggle</h4>
+      <div class="message-body">
+        <div class="content">
+          <p>
+            Bulma<strong>不包括任意的JavaScript</strong>.
+            <br>
+            这里只因为演示需求，给<code>navbar-burger</code>和<code>navbar-burger</code>切换<code>is-active</code>。
+          </p>
+
+          {% highlight html %}{{ navbar_js_html }}{% endhighlight %}
+
+          {% highlight javascript %}{{ navbar_js_code }}{% endhighlight %}
+        </div>
+      </div>
+    </div>
+
+    {% include anchor.html name="Navbar start and navbar end" %}
+
+    <div class="content">
+      <p>
+        <code>navbar-start</code>和<code>navbar-end</code>是<code>navbar-menu</code>的直接子元素和唯一子元素。
+      </p>
+      <p>
+        PC端时{% include bp/desktop.html %}:
+      </p>
+      <ul>
+        <li>
+          <code>navbar-start</code>会出现在<strong>左侧</strong>
+        </li>
+        <li>
+          <code>navbar-end</code>会出现在<strong>右侧</strong>
+        </li>
+      </ul>
+      <p>
+        它们都可以包含多个<code>navbar-item</code>.
+      </p>
+    </div>
+
+    {% highlight html %}{{navbar_start_end_example}}{% endhighlight %}
+
+    {% include anchor.html name="导航项目（Navbar item）" %}
+
+    <div class="content">
+      <p>
+        <code>navbar-item</code>是可以重复的元素，它可以是：
+      </p>
+      <ul>
+        <li>
+          一个导航<strong>链接</strong>
+          {% highlight html %}{{ navbar_item_link_example }}{% endhighlight %}
+        </li>
+        <li>
+          一个<strong>品牌Logo</strong>的容器
+          {% highlight html %}{{ navbar_item_brand_example }}{% endhighlight %}
+        </li>
+        <li>
+          下拉菜单的<strong>父元素</strong>
+          {% highlight html %}{{ navbar_item_dropdown_example }}{% endhighlight %}
+        </li>
+        <li>
+          一个<strong>导航下拉菜单</strong>的子元素
+          {% highlight html %}{{ navbar_item_dropdown_bis_example }}{% endhighlight %}
+        </li>
+        <li>
+          一个<strong>所有</strong>你想要的元素，如<code>field</code>的容器
+          <div class="highlight-full">
+            {% highlight html %}{{ navbar_item_other_example }}{% endhighlight %}
+          </div>
+        </li>
+      </ul>
+      <p>
+        它可以是一个链接标签<code>&lt;a&gt;</code>或者<code>&lt;div&gt;</code>，作为以下元素的<strong>直接子元素</strong>：
+      </p>
+      <ul>
+        <li>
+          <code>navbar</code>
+        </li>
+        <li>
+          <code>navbar-brand</code>
+        </li>
+        <li>
+          <code>navbar-start</code>
+        </li>
+        <li>
+          <code>navbar-end</code>
+        </li>
+        <li>
+          <code>navbar-dropdown</code>
+        </li>
+      </ul>
+      <p>
+        你可以添加<code>is-expanded</code>修饰器来转变其为一个全宽的元素。
+      </p>
+    </div>
+
+    {% include anchor.html name="透明导航条（Transparent navbar）" %}
+
+    <div class="content">
+      <p>
+        添加<code>is-transparent</code>修饰器到<code>navbar</code>组件，这会取消掉所有导航项目的悬停和激活的背景色。
+      </p>
+    </div>
+
+    {% include snippet.html content=navbar_transparent_example paddingless=true horizontal=true more=true %}
+
+    {% include anchor.html name="下拉菜单（Dropdown menu）" %}
+
+    <div class="content">
+      <p>
+        你需要使用<strong>4</strong>种元素来构建<strong>下拉菜单</strong>：
+      </p>
+      <ul>
+        <li>
+          <code>navbar-item</code>需要有<code>has-dropdown</code>修饰器
+        </li>
+        <li>
+          <code>navbar-link</code>用来包含下拉菜单箭头
+        </li>
+        <li>
+          <code>navbar-dropdown</code>用来包含<code>navbar-item</code><code>navbar-divider</code>实例。
+        </li>
+      </ul>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="bd-example is-paddingless">
+          {{ navbar_dropdown_example }}
+        </div>
+      </div>
+
+      <div class="column">
+        {% highlight html %}{{ navbar_dropdown_example }}{% endhighlight %}
+      </div>
+    </div>
+
+    <h4 class="title is-4">
+      通过<strong>CSS</strong>或<strong>JavaScript</strong>来显示/隐藏下拉菜单
+    </h4>
+
+    <div class="content">
+      <p>
+        <code>navbar-dropdown</code>在移动端是直接可见的{% include bp/touch.html %}但是在PC端时会隐藏{% include bp/desktop.html %}。<em>如何 </em>控制其展示与否取决于其父元素。
+      </p>
+      <p>
+        <code>navbar-item</code>带有<code>has-dropdown</code>修饰器，有<strong>2种可选的修饰器</strong>
+      </p>
+      <ul>
+        <li>
+          <code>is-hoverable</code>：鼠标指针<strong>悬停在</strong>父容器<code>navbar-item</code>时，下拉菜单就会显现
+        </li>
+        <li>
+          <code>is-active</code>：下拉菜单会<strong>一直显示</strong>
+        </li>
+      </ul>
+    </div>
+
+    <div class="message is-success">
+      <p class="message-body">
+        当CSS<code>:hover</code>可以完好的工作，<code>is-active</code>修饰器可以由需要使用<strong>JavaScript</strong>的用户来控制导航条显示与否
+      </p>
+    </div>
+
+    {% highlight html %}{{ navbar_dropdown_hover_snippet }}{% endhighlight %}
+
+    <div class="columns">
+      <div class="column">
+        <div class="bd-example is-paddingless">
+          {{ navbar_dropdown_hover_example }}
+        </div>
+      </div>
+
+      <div class="column">
+        {% highlight html %}{{ navbar_dropdown_hover_example }}{% endhighlight %}
+      </div>
+    </div>
+
+    {% highlight html %}{{ navbar_dropdown_active_snippet }}{% endhighlight %}
+
+    <div class="columns">
+      <div class="column">
+        <div class="bd-example is-paddingless">
+          {{ navbar_dropdown_active_example }}
+        </div>
+      </div>
+
+      <div class="column">
+        {% highlight html %}{{ navbar_dropdown_active_example }}{% endhighlight %}
+      </div>
+    </div>
+
+    <h4 class="title is-4">
+      右侧下拉框
+      <span class="tag is-info">0.5.1</span>
+    </h4>
+
+    <div class="content">
+      <p>
+        如果父容器<code>navbar-item</code>再右侧，你可以通过使用<code>is-right</code>来让导航条从 <strong>右侧</strong>开始。
+      </p>
+    </div>
+
+    {% highlight html %}{{ navbar_dropdown_right_snippet }}{% endhighlight %}
+
+    <div class="columns">
+      <div class="column">
+        <div class="bd-example is-paddingless">
+          {{ navbar_dropdown_right_example }}
+        </div>
+      </div>
+
+      <div class="column">
+        {% highlight html %}{{ navbar_dropdown_right_example }}{% endhighlight %}
+      </div>
+    </div>
+
+    <h4 class="title is-4">
+      下拉菜单的样式
+    </h4>
+
+    <div class="content">
+      <p>
+        默认的<code>navbar-dropdown</code>拥有：
+      </p>
+      <ul>
+        <li>
+          一个灰色的<code>border-top</code>
+        </li>
+        <li>
+          <code>border-radius</code>在底部的角
+        </li>
+      </ul>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="bd-example is-paddingless">
+          {{ navbar_dropdown_default_example }}
+        </div>
+      </div>
+
+      <div class="column">
+        {% highlight html %}{{ navbar_dropdown_default_example }}{% endhighlight %}
+      </div>
+    </div>
+
+    <div class="content">
+      <p>
+        当使用<a href="#transparent-navbar">透明导航条</a>，更好的方式是使用盒状下拉菜单，只需要使用<code>is-boxed</code>修饰器。
+      </p>
+      <ul>
+        <li>
+          灰色边线<strong>呗去除</strong>
+        </li>
+        <li>
+          轻量级的<strong>内部阴影</strong>
+        </li>
+        <li>
+          所有的角都<strong>是圆角</strong>
+        </li>
+        <li>
+          悬停/激活状态<strong>有动画效果</strong>
+        </li>
+      </ul>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="bd-example is-paddingless">
+          {{ navbar_dropdown_boxed_example }}
+        </div>
+      </div>
+
+      <div class="column">
+        {% highlight html %}{{ navbar_dropdown_boxed_example }}{% endhighlight %}
+      </div>
+    </div>
+
+    <h4 class="title is-4">
+      Active dropdown navbar item
+    </h4>
+
+    <div class="columns">
+      <div class="column">
+        <div class="bd-example is-paddingless">
+          {{ navbar_dropdown_item_active_example }}
+        </div>
+      </div>
+
+      <div class="column">
+        {% highlight html %}{{ navbar_dropdown_item_active_example }}{% endhighlight %}
+      </div>
+    </div>
+
+    <h4 class="title is-4">
+      下拉菜单分隔线
+    </h4>
+
+    <div class="content">
+      <p>
+        你可以添加<code>navbar-divider</code>来放置一条<strong>水平线</strong>在<code>navbar-dropdown</code>之间
+      </p>
+    </div>
+
+    {% highlight html %}{{ navbar_divider_example }}{% endhighlight %}
+
+    {% include anchor.html name="颜色" %}
+
+    <div class="tags has-addons">
+      <span class="tag">New!</span>
+      <span class="tag is-info">0.5.2</span>
+    </div>
+
+    <div class="content">
+      <p>
+        You can change the background color of the <code>navbar</code> by using one of the <strong>9 color modifiers:</strong>
+      </p>
+      <ul>
+        <li><code>is-primary</code></li>
+        <li><code>is-link</code></li>
+        <li><code>is-info</code></li>
+        <li><code>is-success</code></li>
+        <li><code>is-warning</code></li>
+        <li><code>is-danger</code></li>
+        <li><code>is-black</code></li>
+        <li><code>is-dark</code></li>
+        <li><code>is-light</code></li>
+        <li><code>is-white</code></li>
+      </ul>
+    </div>
+
+    {% highlight html %}{{ navbar_color_markup }}{% endhighlight %}
+
+    <div class="bd-example is-paddingless">
+      {% include examples/navbar-color.html color="primary" %}
+    </div>
+
+    <div class="bd-example is-paddingless">
+      {% include examples/navbar-color.html color="link" %}
+    </div>
+
+    <div class="bd-example is-paddingless">
+      {% include examples/navbar-color.html color="info" %}
+    </div>
+
+    <div class="bd-example is-paddingless">
+      {% include examples/navbar-color.html color="success" %}
+    </div>
+
+    <div class="bd-example is-paddingless">
+      {% include examples/navbar-color.html color="warning" light=true %}
+    </div>
+
+    <div class="bd-example is-paddingless">
+      {% include examples/navbar-color.html color="danger" %}
+    </div>
+
+    <div class="bd-example is-paddingless">
+      {% include examples/navbar-color.html color="black" %}
+    </div>
+
+    <div class="bd-example is-paddingless">
+      {% include examples/navbar-color.html color="dark" %}
+    </div>
+
+    <div class="bd-example is-paddingless">
+      {% include examples/navbar-color.html color="light" light=true %}
+    </div>
+
+    <div class="bd-example is-paddingless">
+      {% include examples/navbar-color.html color="white" light=true %}
+    </div>
+
+    {% include variables.html type='组件' %}
+
+  </div>
+</section>

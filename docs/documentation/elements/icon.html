@@ -1,0 +1,950 @@
+---
+title: Icon
+iconic: true
+ionicons: true
+mdi: true
+layout: documentation
+doc-tab: elements
+doc-subtab: icon
+---
+
+{% capture icon_example %}
+<span class="icon">
+  <i class="fa fa-home"></i>
+</span>
+{% endcapture %}
+
+{% capture icon_color_example %}
+<span class="icon has-text-info">
+  <i class="fa fa-info-circle"></i>
+</span>
+<span class="icon has-text-success">
+  <i class="fa fa-check-square"></i>
+</span>
+<span class="icon has-text-warning">
+  <i class="fa fa-warning"></i>
+</span>
+<span class="icon has-text-danger">
+  <i class="fa fa-ban"></i>
+</span>
+{% endcapture %}
+
+{% capture icon_sizes_example %}
+<span class="icon">
+  <i class="fa fa-camera-retro fa-lg"></i>
+</span>
+<span class="icon">
+  <i class="fa fa-camera-retro fa-2x"></i>
+</span>
+<span class="icon">
+  <i class="fa fa-camera-retro fa-3x"></i>
+</span>
+<span class="icon">
+  <i class="fa fa-camera-retro fa-4x"></i>
+</span>
+<span class="icon">
+  <i class="fa fa-camera-retro fa-5x"></i>
+</span>
+{% endcapture %}
+
+{% include subnav-elements.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">图标（Icons）</h1>
+    <h2 class="subtitle">
+      Bulma兼容<strong>所有的字体图标库</strong>: <a href="http://fontawesome.io/">Font Awesome</a>, <a href="https://materialdesignicons.com">Material Design Icons</a>, <a href="https://useiconic.com/open">Open Iconic</a>, <a href="http://ionicons.com/">Ionicons</a>等。
+    </h2>
+    {%
+      include meta.html
+      colors=true
+      sizes=true
+      variables=true
+    %}
+
+    <hr>
+
+    <div class="content">
+      <p>
+        <code>icon</code>元素是一种对所有<strong>字体图标</strong>都适用的<strong>容器</strong>。因为图标通常需要一些时间来下载，所以你需要控制图标占据的<strong>空间</strong>，你可以使用<code>icon</code>元素作为可靠的正方形容器，它会防止页面在加载时“跳动”。</p>
+    </div>
+
+    <div class="block bd-icon-size">
+      {% include snippet.html content=icon_example %}
+    </div>
+
+    <div class="message is-info">
+      <div class="message-body">
+       此处的<strong>黄色背景</strong>只是作为演示，来标记图标容器区域。
+      </div>
+    </div>
+
+
+    <div class="content">
+      <p>
+        默认的<code>icon</code>容器的尺寸会<em>指定为 </em><code>1.5rem x 1.5rem</code>。图标本身的尺寸取决于你使用的图标库。例如Font Awesome图标库会<strong>继承</strong>字体尺寸。</p>
+    </div>
+
+    {% include anchor.html name="Colors" %}
+
+    <div class="content">
+      <p>
+        因为字体图标都是简单的<strong>文字</strong>，你可以使用<a href="/documentation/modifiers/typography-helpers/#colors">颜色修饰器</a>来改变图标颜色。
+      </p>
+    </div>
+
+    {% include snippet.html content=icon_color_example %}
+
+    {% include anchor.html name="尺寸" %}
+
+    <div class="content">
+      <p>
+       Bulma<code>图标</code>容器包含<strong>4种尺寸</strong>。这意味着需要使用比图标<em>稍大 </em>的容器。例如，Font Awesome图标默认使用字体尺寸<code>1em</code>(因为它会继承字体尺寸)，但是提供了<a href="http://fontawesome.io/examples/">可选尺寸</a>。
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>Container class</th>
+          <th>Container size</th>
+          <th>Font Awesome class</th>
+          <th>Icon size</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code>icon is-small</code>
+          </td>
+          <td>
+            <code>1rem x 1rem</code>
+          </td>
+          <td>
+            <code>fa</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-small">
+              <i class="fa fa-home"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2">
+            <code>icon</code>
+          </td>
+          <td rowspan="2">
+            <code>1.5rem x 1.5rem</code>
+          </td>
+          <td>
+            <code>fa</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="fa fa-home"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>fa fa-lg</code>
+          </td>
+          <td>
+            <code>1.33em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="fa fa-lg fa-home"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="3">
+            <code>icon is-medium</code>
+          </td>
+          <td rowspan="3">
+            <code>2rem x 2rem</code>
+          </td>
+          <td>
+            <code>fa</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-medium">
+              <i class="fa fa-home"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>fa fa-lg</code>
+          </td>
+          <td>
+            <code>1.33em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-medium">
+              <i class="fa fa-lg fa-home"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>fa fa-2x</code>
+          </td>
+          <td>
+            <code>2em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-medium">
+              <i class="fa fa-2x fa-home"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="4">
+            <code>icon is-large</code>
+          </td>
+          <td rowspan="4">
+            <code>3rem x 3rem</code>
+          </td>
+          <td>
+            <code>fa</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <i class="fa fa-home"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>fa fa-lg</code>
+          </td>
+          <td>
+            <code>1.33em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <i class="fa fa-lg fa-home"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>fa fa-2x</code>
+          </td>
+          <td>
+            <code>2em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <i class="fa fa-2x fa-home"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>fa fa-3x</code>
+          </td>
+          <td>
+            <code>3em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <i class="fa fa-3x fa-home"></i>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% include anchor.html name="Font Awesome变量" %}
+
+    <div class="content">
+      <p>
+        Font Awesome也提供了修饰器类:
+      </p>
+      <ul>
+        <li>
+          固定宽度的图标
+        </li>
+        <li>
+          带边线的图标
+        </li>
+        <li>
+          动画图标
+        </li>
+        <li>
+          旋转和翻转的图标
+        </li>
+        <li>
+          叠加的图标
+        </li>
+      </ul>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Font Awesome class</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            固定宽度的图标
+          </td>
+          <td>
+            <code>fa fa-fw</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="fa fa-home fa-fw"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            带边线的图标
+          </td>
+          <td>
+            <code>fa fa-border</code>
+          </td>
+          <td>
+            <span class="icon">
+              <i class="fa fa-home fa-border"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            动画图标
+          </td>
+          <td>
+            <code>fa fa-refresh fa-spin</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="fa fa-refresh fa-spin"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            旋转和翻转的图标
+          </td>
+          <td>
+            <code>fa fa-shield</code><br>
+            <code>fa fa-shield fa-rotate-90</code><br>
+            <code>fa fa-shield fa-rotate-180</code><br>
+            <code>fa fa-shield fa-rotate-270</code><br>
+            <code>fa fa-shield fa-flip-horizontal</code><br>
+            <code>fa fa-shield fa-flip-vertical</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="fa fa-shield"></i>
+            </span>
+            <br>
+            <span class="icon">
+              <i class="fa fa-shield fa-rotate-90"></i>
+            </span>
+            <br>
+            <span class="icon">
+              <i class="fa fa-shield fa-rotate-180"></i>
+            </span>
+            <br>
+            <span class="icon">
+              <i class="fa fa-shield fa-rotate-270"></i>
+            </span>
+            <br>
+            <span class="icon">
+              <i class="fa fa-shield fa-flip-horizontal"></i>
+            </span>
+            <br>
+            <span class="icon">
+              <i class="fa fa-shield fa-flip-vertical"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2">
+            叠加的图标
+          </td>
+          <td>
+            {% highlight html %}<span class="icon is-medium">
+  <span class="fa-stack">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+  </span>
+</span>{% endhighlight %}
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-medium">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+              </span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {% highlight html %}<span class="icon is-large">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-camera fa-stack-1x"></i>
+    <i class="fa fa-ban fa-stack-2x has-text-danger"></i>
+  </span>
+</span>{% endhighlight %}
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-camera fa-stack-1x"></i>
+                <i class="fa fa-ban fa-stack-2x has-text-danger"></i>
+              </span>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% include anchor.html name="Material Design Icons" %}
+
+    <div class="content">
+      <p>
+        这里是<code>icon</code>容器中使用<a href="https://materialdesignicons.com">Material Design Icons</a>.
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>Container class</th>
+          <th>Container size</th>
+          <th>MDI class</th>
+          <th>Icon size</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code>icon is-small</code>
+          </td>
+          <td>
+            <code>1rem x 1rem</code>
+          </td>
+          <td>
+            <code>mdi</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-small">
+              <i class="mdi mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2">
+            <code>icon</code>
+          </td>
+          <td rowspan="2">
+            <code>1.5rem x 1.5rem</code>
+          </td>
+          <td>
+            <code>mdi mdi-18px</code>
+          </td>
+          <td>
+            <code>18px</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="mdi mdi-18px mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>mdi mdi-24px</code>
+          </td>
+          <td>
+            <code>24px</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="mdi mdi-24px mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="4">
+            <code>icon is-medium</code>
+          </td>
+          <td rowspan="4">
+            <code>2rem x 2rem</code>
+          </td>
+          <td>
+            <code>mdi</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-medium">
+              <i class="mdi mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>mdi mdi-18px</code>
+          </td>
+          <td>
+            <code>18px</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-medium">
+              <i class="mdi mdi-18px mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>mdi mdi-24px</code>
+          </td>
+          <td>
+            <code>24px</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-medium">
+              <i class="mdi mdi-24px mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>mdi mdi-36px</code>
+          </td>
+          <td>
+            <code>36px</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-medium">
+              <i class="mdi mdi-36px mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="5">
+            <code>icon is-large</code>
+          </td>
+          <td rowspan="5">
+            <code>3rem x 3rem</code>
+          </td>
+          <td>
+            <code>mdi</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <i class="mdi mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>mdi mdi-18px</code>
+          </td>
+          <td>
+            <code>18px</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <i class="mdi mdi-18px mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>mdi mdi-24px</code>
+          </td>
+          <td>
+            <code>24px</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <i class="mdi mdi-24px mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>mdi mdi-36px</code>
+          </td>
+          <td>
+            <code>36px</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <i class="mdi mdi-36px mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>mdi mdi-48px</code>
+          </td>
+          <td>
+            <code>48px</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <i class="mdi mdi-48px mdi-bell"></i>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="content">
+      <p>
+        MDI也提供修饰器:
+      </p>
+      <ul>
+        <li>
+          明暗类
+        </li>
+        <li>
+          旋转和翻转
+        </li>
+      </ul>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Material Design Icon class</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Light color
+          </td>
+          <td>
+            <code>mdi mdi-light</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="mdi mdi-signal-4g mdi-light"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Dark color
+          </td>
+          <td>
+            <code>mdi mdi-dark</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="mdi mdi-signal-4g mdi-dark"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Light inactive color
+          </td>
+          <td>
+            <code>mdi mdi-light mdi-inactive</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="mdi mdi-signal-4g mdi-light mdi-inactive"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Dark inactive color
+          </td>
+          <td>
+            <code>mdi mdi-dark mdi-inactive</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="mdi mdi-signal-4g mdi-dark mdi-inactive"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Flipped
+          </td>
+          <td>
+            <code>mdi mdi-flip-h</code>
+            <br>
+            <code>mdi mdi-flip-v</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="mdi mdi-signal-4g mdi-flip-h"></i>
+            </span>
+            <br>
+            <span class="icon">
+              <i class="mdi mdi-signal-4g mdi-flip-v"></i>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Rotated
+          </td>
+          <td>
+            <code>mdi mdi-rotate-45</code>
+            <br>
+            <code>mdi mdi-rotate-90</code>
+            <br>
+            <code>mdi mdi-rotate-180</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <i class="mdi mdi-signal-4g mdi-rotate-45"></i>
+            </span>
+            <br>
+            <span class="icon">
+              <i class="mdi mdi-signal-4g mdi-rotate-90"></i>
+            </span>
+            <br>
+            <span class="icon">
+              <i class="mdi mdi-signal-4g mdi-rotate-180"></i>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% include anchor.html name="Open Iconic" %}
+
+    <div class="content">
+      <p>
+        在里是在<code>icon</code>容器中使用<a href="https://useiconic.com/open">Open Iconic</a>.
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>Container class</th>
+          <th>Container size</th>
+          <th>Iconic class</th>
+          <th>Icon size</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code>icon is-small</code>
+          </td>
+          <td>
+            <code>1rem x 1rem</code>
+          </td>
+          <td>
+            <code>oi [data-glyph=puzzle-piece]</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-small">
+              <span class="oi" data-glyph="puzzle-piece"></span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>icon</code>
+          </td>
+          <td>
+            <code>1.5rem x 1.5rem</code>
+          </td>
+          <td>
+            <code>oi [data-glyph=puzzle-piece]</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <span class="oi" data-glyph="puzzle-piece"></span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>icon is-medium</code>
+          </td>
+          <td>
+            <code>2rem x 2rem</code>
+          </td>
+          <td>
+            <code>oi [data-glyph=puzzle-piece]</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-medium">
+              <span class="oi" data-glyph="puzzle-piece"></span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>icon is-large</code>
+          </td>
+          <td>
+            <code>3rem x 3rem</code>
+          </td>
+          <td>
+            <code>oi [data-glyph=puzzle-piece]</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <span class="oi" data-glyph="puzzle-piece"></span>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% include anchor.html name="Ionicons" %}
+
+    <div class="content">
+      <p>
+        这里是在<code>icon</code>容器中使用<a href="http://ionicons.com">Ionicons</a>.
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>Container class</th>
+          <th>Container size</th>
+          <th>Ionicon class</th>
+          <th>Icon size</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code>icon is-small</code>
+          </td>
+          <td>
+            <code>1rem x 1rem</code>
+          </td>
+          <td>
+            <code>ion-ionic</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-small">
+              <span class="ion-ionic"></span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>icon</code>
+          </td>
+          <td>
+            <code>1.5rem x 1.5rem</code>
+          </td>
+          <td>
+            <code>ion-ionic</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon">
+              <span class="ion-ionic"></span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>icon is-medium</code>
+          </td>
+          <td>
+            <code>2rem x 2rem</code>
+          </td>
+          <td>
+            <code>ion-ionic</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-medium">
+              <span class="ion-ionic"></span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>icon is-large</code>
+          </td>
+          <td>
+            <code>3rem x 3rem</code>
+          </td>
+          <td>
+            <code>ion-ionic</code>
+          </td>
+          <td>
+            <code>1em</code>
+          </td>
+          <td class="bd-icon-size">
+            <span class="icon is-large">
+              <span class="ion-ionic"></span>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% include variables.html type='元素' %}
+
+  </div>
+</section>

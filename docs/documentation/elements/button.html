@@ -1,0 +1,773 @@
+---
+title: Button
+layout: documentation
+doc-tab: elements
+doc-subtab: button
+---
+
+{% capture button_example %}
+<a class="button">Button</a>
+{% endcapture %}
+
+{% capture button_tags_example %}
+<a class="button">Anchor</a>
+<button class="button">Button</button>
+<input class="button" type="submit" value="Submit input">
+<input class="button" type="reset" value="Reset input">
+{% endcapture %}
+
+{% capture button_colors_a_example %}
+<a class="button is-white">White</a>
+<a class="button is-light">Light</a>
+<a class="button is-dark">Dark</a>
+<a class="button is-black">Black</a>
+<a class="button is-text">Text</a>
+{% endcapture %}
+
+{% capture button_colors_b_example %}
+<a class="button is-primary">Primary</a>
+<a class="button is-link">Link</a>
+<a class="button is-info">Info</a>
+<a class="button is-success">Success</a>
+<a class="button is-warning">Warning</a>
+<a class="button is-danger">Danger</a>
+{% endcapture %}
+
+{% capture button_sizes_example %}
+<a class="button is-small">Small</a>
+<a class="button">Normal</a>
+<a class="button is-medium">Medium</a>
+<a class="button is-large">Large</a>
+{% endcapture %}
+
+{% capture button_outlined_example %}
+<a class="button is-outlined">Outlined</a>
+<a class="button is-primary is-outlined">Outlined</a>
+<a class="button is-link is-outlined">Outlined</a>
+<a class="button is-info is-outlined">Outlined</a>
+<a class="button is-success is-outlined">Outlined</a>
+<a class="button is-danger is-outlined">Outlined</a>
+{% endcapture %}
+
+{% capture button_inverted_example %}
+<a class="button is-primary is-inverted">Inverted</a>
+<a class="button is-link is-inverted">Inverted</a>
+<a class="button is-info is-inverted">Inverted</a>
+<a class="button is-success is-inverted">Inverted</a>
+<a class="button is-danger is-inverted">Inverted</a>
+{% endcapture %}
+
+{% capture button_inverted_outlined_example %}
+<a class="button is-primary is-inverted is-outlined">Invert Outlined</a>
+<a class="button is-link is-inverted is-outlined">Invert Outlined</a>
+<a class="button is-info is-inverted is-outlined">Invert Outlined</a>
+<a class="button is-success is-inverted is-outlined">Invert Outlined</a>
+<a class="button is-danger is-inverted is-outlined">Invert Outlined</a>
+{% endcapture %}
+
+{% capture button_normal_example %}
+<a class="button">Normal</a>
+<a class="button is-primary">Normal</a>
+<a class="button is-link">Normal</a>
+<a class="button is-info">Normal</a>
+<a class="button is-success">Normal</a>
+<a class="button is-warning">Normal</a>
+<a class="button is-danger">Normal</a>
+{% endcapture %}
+
+{% capture button_hover_example %}
+<a class="button is-hovered">Hover</a>
+<a class="button is-primary is-hovered">Hover</a>
+<a class="button is-link is-hovered">Hover</a>
+<a class="button is-info is-hovered">Hover</a>
+<a class="button is-success is-hovered">Hover</a>
+<a class="button is-warning is-hovered">Hover</a>
+<a class="button is-danger is-hovered">Hover</a>
+{% endcapture %}
+
+{% capture button_focus_example %}
+<a class="button is-focused">Focus</a>
+<a class="button is-primary is-focused">Focus</a>
+<a class="button is-link is-focused">Focus</a>
+<a class="button is-info is-focused">Focus</a>
+<a class="button is-success is-focused">Focus</a>
+<a class="button is-warning is-focused">Focus</a>
+<a class="button is-danger is-focused">Focus</a>
+{% endcapture %}
+
+{% capture button_active_example %}
+<a class="button is-active">Active</a>
+<a class="button is-primary is-active">Active</a>
+<a class="button is-link is-active">Active</a>
+<a class="button is-info is-active">Active</a>
+<a class="button is-success is-active">Active</a>
+<a class="button is-warning is-active">Active</a>
+<a class="button is-danger is-active">Active</a>
+{% endcapture %}
+
+{% capture button_loading_example %}
+<a class="button is-loading">Loading</a>
+<a class="button is-primary is-loading">Loading</a>
+<a class="button is-link is-loading">Loading</a>
+<a class="button is-info is-loading">Loading</a>
+<a class="button is-success is-loading">Loading</a>
+<a class="button is-warning is-loading">Loading</a>
+<a class="button is-danger is-loading">Loading</a>
+{% endcapture %}
+
+{% capture button_static_example %}
+<span class="button is-static">Static</span>
+{% endcapture %}
+
+{% capture button_disabled_example %}
+<a class="button" title="Disabled button" disabled>Disabled</a>
+<a class="button is-primary" title="Disabled button" disabled>Disabled</a>
+<a class="button is-link" title="Disabled button" disabled>Disabled</a>
+<a class="button is-info" title="Disabled button" disabled>Disabled</a>
+<a class="button is-success" title="Disabled button" disabled>Disabled</a>
+<a class="button is-warning" title="Disabled button" disabled>Disabled</a>
+<a class="button is-danger" title="Disabled button" disabled>Disabled</a>
+{% endcapture %}
+
+{% capture button_fa_example %}
+<p class="field">
+  <a class="button">
+    <span class="icon is-small">
+      <i class="fa fa-bold"></i>
+    </span>
+  </a>
+  <a class="button">
+    <span class="icon is-small">
+      <i class="fa fa-italic"></i>
+    </span>
+  </a>
+  <a class="button">
+    <span class="icon is-small">
+      <i class="fa fa-underline"></i>
+    </span>
+  </a>
+</p>
+<p class="field">
+  <a class="button">
+    <span class="icon">
+      <i class="fa fa-github"></i>
+    </span>
+    <span>GitHub</span>
+  </a>
+  <a class="button is-primary">
+    <span class="icon">
+      <i class="fa fa-twitter"></i>
+    </span>
+    <span>Twitter</span>
+  </a>
+  <a class="button is-success">
+    <span class="icon is-small">
+      <i class="fa fa-check"></i>
+    </span>
+    <span>Save</span>
+  </a>
+  <a class="button is-danger is-outlined">
+    <span>Delete</span>
+    <span class="icon is-small">
+      <i class="fa fa-times"></i>
+    </span>
+  </a>
+</p>
+<p class="field">
+  <a class="button is-small">
+    <span class="icon is-small">
+      <i class="fa fa-github"></i>
+    </span>
+    <span>GitHub</span>
+  </a>
+  <a class="button">
+    <span class="icon">
+      <i class="fa fa-github"></i>
+    </span>
+    <span>GitHub</span>
+  </a>
+  <a class="button is-medium">
+    <span class="icon">
+      <i class="fa fa-github"></i>
+    </span>
+    <span>GitHub</span>
+  </a>
+  <a class="button is-large">
+    <span class="icon is-medium">
+      <i class="fa fa-github"></i>
+    </span>
+    <span>GitHub</span>
+  </a>
+</p>
+{% endcapture %}
+
+{% capture button_only_icon_example %}
+<p class="field">
+  <a class="button is-small">
+    <span class="icon is-small">
+      <i class="fa fa-header"></i>
+    </span>
+  </a>
+</p>
+<p class="field">
+  <a class="button">
+    <span class="icon is-small">
+      <i class="fa fa-header"></i>
+    </span>
+  </a>
+  <a class="button">
+  <span class="icon">
+    <i class="fa fa-header"></i>
+  </span>
+  </a>
+</p>
+<p class="field">
+  <a class="button is-medium">
+    <span class="icon is-small">
+      <i class="fa fa-header"></i>
+    </span>
+  </a>
+  <a class="button is-medium">
+  <span class="icon">
+    <i class="fa fa-header"></i>
+  </span>
+  </a>
+  <a class="button is-medium">
+    <span class="icon is-medium">
+      <i class="fa fa-header"></i>
+    </span>
+  </a>
+</p>
+<p class="field">
+  <a class="button is-large">
+    <span class="icon is-small">
+      <i class="fa fa-header"></i>
+    </span>
+  </a>
+  <a class="button is-large">
+  <span class="icon">
+    <i class="fa fa-header"></i>
+  </span>
+  </a>
+  <a class="button is-large">
+    <span class="icon is-medium">
+      <i class="fa fa-header"></i>
+    </span>
+  </a>
+  <a class="button is-large">
+    <span class="icon is-large">
+      <i class="fa fa-header"></i>
+    </span>
+  </a>
+</p>
+{% endcapture %}
+
+{% capture button_group_example %}
+<div class="field is-grouped">
+  <p class="control">
+    <a class="button is-link">
+      Save changes
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Cancel
+    </a>
+  </p>
+  <p class="control">
+    <a class="button is-danger">
+      Delete post
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture button_addons_example %}
+<div class="field has-addons">
+  <p class="control">
+    <a class="button">
+      <span class="icon is-small">
+        <i class="fa fa-align-left"></i>
+      </span>
+      <span>Left</span>
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      <span class="icon is-small">
+        <i class="fa fa-align-center"></i>
+      </span>
+      <span>Center</span>
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      <span class="icon is-small">
+        <i class="fa fa-align-right"></i>
+      </span>
+      <span>Right</span>
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture button_group_addons_example %}
+<div class="field has-addons">
+  <p class="control">
+    <a class="button">
+      <span class="icon is-small">
+        <i class="fa fa-bold"></i>
+      </span>
+      <span>Bold</span>
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      <span class="icon is-small">
+        <i class="fa fa-italic"></i>
+      </span>
+      <span>Italic</span>
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      <span class="icon is-small">
+        <i class="fa fa-underline"></i>
+      </span>
+      <span>Underline</span>
+    </a>
+  </p>
+</div>
+
+<div class="field has-addons">
+  <p class="control">
+    <a class="button">
+      <span class="icon is-small">
+        <i class="fa fa-align-left"></i>
+      </span>
+      <span>Left</span>
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      <span class="icon is-small">
+        <i class="fa fa-align-center"></i>
+      </span>
+      <span>Center</span>
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      <span class="icon is-small">
+        <i class="fa fa-align-right"></i>
+      </span>
+      <span>Right</span>
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture buttons %}
+<div class="buttons">
+  <span class="button is-success">Save changes</span>
+  <span class="button is-info">Save and continue</span>
+  <span class="button is-danger">Cancel</span>
+</div>
+{% endcapture %}
+
+{% capture buttons_multiple %}
+<div class="buttons">
+  <span class="button">One</span>
+  <span class="button">Two</span>
+  <span class="button">Three</span>
+  <span class="button">Four</span>
+  <span class="button">Five</span>
+  <span class="button">Six</span>
+  <span class="button">Seven</span>
+  <span class="button">Eight</span>
+  <span class="button">Nine</span>
+  <span class="button">Ten</span>
+  <span class="button">Eleven</span>
+  <span class="button">Twelve</span>
+  <span class="button">Thirteen</span>
+  <span class="button">Fourteen</span>
+  <span class="button">Fifteen</span>
+  <span class="button">Sixteen</span>
+  <span class="button">Seventeen</span>
+  <span class="button">Eighteen</span>
+  <span class="button">Nineteen</span>
+  <span class="button">Twenty</span>
+</div>
+{% endcapture %}
+
+{% capture buttons_addons %}
+<div class="buttons has-addons">
+  <span class="button">Yes</span>
+  <span class="button">Maybe</span>
+  <span class="button">No</span>
+</div>
+{% endcapture %}
+
+{% capture buttons_addons_centered %}
+<div class="buttons has-addons is-centered">
+  <span class="button">Yes</span>
+  <span class="button">Maybe</span>
+  <span class="button">No</span>
+</div>
+{% endcapture %}
+
+{% capture buttons_addons_right %}
+<div class="buttons has-addons is-right">
+  <span class="button">Yes</span>
+  <span class="button">Maybe</span>
+  <span class="button">No</span>
+</div>
+{% endcapture %}
+
+{% capture buttons_addons_selected %}
+<div class="buttons has-addons">
+  <span class="button is-success is-selected">Yes</span>
+  <span class="button">Maybe</span>
+  <span class="button">No</span>
+</div>
+
+<div class="buttons has-addons">
+  <span class="button">Yes</span>
+  <span class="button is-info is-selected">Maybe</span>
+  <span class="button">No</span>
+</div>
+
+<div class="buttons has-addons">
+  <span class="button">Yes</span>
+  <span class="button">Maybe</span>
+  <span class="button is-danger is-selected">No</span>
+</div>
+{% endcapture %}
+
+{% include subnav-elements.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">按钮（Buttons）</h1>
+    <h2 class="subtitle">
+      经典样式的<strong>按钮</strong>，有不同的颜色、尺寸和状态
+    </h2>
+    {%
+      include meta.html
+      colors=true
+      sizes=true
+      variables=true
+    %}
+
+    <hr>
+
+    <div class="content">
+      <p>
+        <strong>按钮</strong>在任何设计下都是一种必要的元素。这意味着需它的外观和行为在页面中需要有<strong>可交互性</strong>。
+      </p>
+    </div>
+
+    {% include snippet.html content=button_example %}
+
+    <div class="content">
+      <p>
+        <code>.button</code>类名可以使用在：
+      </p>
+      <ul>
+        <li>
+          <code>&lt;a&gt;</code>链接
+        </li>
+        <li>
+          <code>&lt;button&gt;</code>表单按钮
+        </li>
+        <li>
+          <code>&lt;input type="submit"&gt;</code>提交输入框
+        </li>
+        <li>
+          <code>&lt;input type="reset"&gt;</code>重置输入框
+        </li>
+      </ul>
+    </div>
+
+    {% include snippet.html content=button_tags_example %}
+
+    {% include anchor.html name="颜色" %}
+
+    {% include snippet.html content=button_colors_a_example %}
+
+    {% include snippet.html content=button_colors_b_example %}
+
+    {% include anchor.html name="尺寸" %}
+
+    {% include snippet.html content=button_sizes_example %}
+
+    {% include anchor.html name="样式" %}
+
+    <h4 class="subtitle">Outlined</h4>
+
+    {% include snippet.html content=button_outlined_example %}
+
+    <h4 class="subtitle">Inverted (文本颜色变成背景颜色，反之亦然)</h4>
+
+    <div class="columns">
+      <div class="column">
+        <div class="bd-callout is-primary">
+          {{button_inverted_example}}
+        </div>
+      </div>
+      <div class="column">
+        {% highlight html %}{{button_inverted_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    <h4 class="subtitle">Invert Outlined (反转色变成文本和边线颜色)</h4>
+
+    <div class="columns">
+      <div class="column">
+        <div class="bd-callout is-primary">
+          {{button_inverted_outlined_example}}
+        </div>
+      </div>
+      <div class="column">
+        {% highlight html %}{{button_inverted_outlined_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    {% include anchor.html name="状态" %}
+
+    <h4 class="subtitle">Normal</h4>
+
+    {% include snippet.html content=button_normal_example %}
+
+    <h4 class="subtitle">Hover</h4>
+
+    {% include snippet.html content=button_hover_example %}
+
+    <h4 class="subtitle">Focus</h4>
+
+    {% include snippet.html content=button_focus_example %}
+
+    <h4 class="subtitle">Active</h4>
+
+    {% include snippet.html content=button_active_example %}
+
+    <h4 class="subtitle">Loading</h4>
+
+    <div class="columns">
+      <div class="column">
+        <div class="block">
+          {{button_loading_example}}
+        </div>
+        <div class="message is-info">
+          <div class="message-body">
+            <p>
+              因为loading图标使用了伪类<code>:after</code>元素,所以不支持在<code>&lt;input type="submit"&gt;</code>元素上使用
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        {% highlight html %}{{button_loading_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    <h4 id="static-button" class="subtitle">
+      Static
+    </h4>
+
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>
+            你可以通过<code>is-static</code>修饰器来使用<strong>非交互性按钮</strong>。在使用<a href="{{site.url}}/documentation/form/general#form-addons">表单尾缀</a>时，这可以方便的对齐文本标签和输入框。
+          </p>
+        </div>
+        {{button_static_example}}
+      </div>
+      <div class="column">
+        {% highlight html %}{{button_static_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    <h4 class="subtitle">Disabled</h4>
+
+    <div class="columns">
+      <div class="column">
+        <div class="block">
+          {{button_disabled_example}}
+        </div>
+        <div class="message is-danger">
+          <div class="message-body">
+            <p><code>is-disabled</code>CSS类已经过时，目前可以通过<code>disabled</code> HTML属性来指定 <a href="https://github.com/jgthms/bulma/issues/276">查看更多</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        {% highlight html %}{{button_disabled_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    <h4 class="subtitle">支持使用Font Awesome图标</h4>
+
+    {% include snippet.html content=button_fa_example clipped=true %}
+
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>
+            如果按你只包含一个图标，Bulma会确保按钮保持<strong>方形</strong>，不管按钮<em>或 </em>图标的尺寸。
+          </p>
+        </div>
+        {{button_only_icon_example}}
+      </div>
+      <div class="column">
+        {% highlight html %}{{button_only_icon_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    {% include anchor.html name="按钮组（Button group）" %}
+
+    <div class="content">
+      <p>如果你需要<strong>组织</strong>按钮放在<strong>单独的一行</strong>，在<code>field</code>容器上添加<code>is-grouped</code>修饰器:</p>
+    </div>
+
+    {% include snippet.html content=button_group_example %}
+
+    {% include anchor.html name="按钮尾缀（Button addons）" %}
+
+    <div class="content">
+      <p>如果你想要在按钮中使用<strong>尾缀</strong>，可以在<code>field</code>容器上添加<code>has-addons</code>修饰器来使用：</p>
+    </div>
+
+    {% include snippet.html content=button_addons_example %}
+
+    {% include anchor.html name="按钮组带尾缀（Button group with addons）" %}
+
+    <div class="content">
+      <p>你可以在按钮组中同样使用尾缀:</p>
+    </div>
+
+    {% include snippet.html content=button_group_addons_example %}
+
+    {% include anchor.html name="按钮列表（List of buttons）" %}
+
+    {% include elements/new-tag.html version="0.6.1" %}
+
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>
+            你可以建立一个<strong>按钮列表</strong>通过在容器上添加<code>.buttons</code>修饰器。
+          </p>
+        </div>
+        <div class="bd-example">
+          {{ buttons }}
+        </div>
+      </div>
+      <div class="column">
+        {% highlight html %}{{ buttons }}{% endhighlight %}
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>
+            如果列表<strong>非常长</strong>，它会自动的拓展为<strong>多列</strong>，同时保持所有的按钮<strong>均匀分布</strong>。
+          </p>
+        </div>
+        <div class="bd-example">
+          {{ buttons_multiple }}
+        </div>
+      </div>
+      <div class="column highlight-full">
+        {% highlight html %}{{ buttons_multiple }}{% endhighlight %}
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>
+            你可以将<strong>按钮附着在一起</strong>通过添加<code>.has-addons</code>修饰器。
+          </p>
+        </div>
+        <div class="bd-example">
+          {{ buttons_addons }}
+        </div>
+      </div>
+      <div class="column highlight-full">
+        {% highlight html %}{{ buttons_addons }}{% endhighlight %}
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>
+            使用<code>is-centered</code>或者<code>is-right</code>修饰器来调整<strong>定位</strong>。
+          </p>
+        </div>
+        <div class="bd-example">
+          {{ buttons_addons_centered }}
+          {{ buttons_addons_right }}
+        </div>
+      </div>
+      <div class="column highlight-full">
+        {% highlight html %}{{ buttons_addons_centered }}{{ buttons_addons_right }}{% endhighlight %}
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <p>
+            你可以在每一个按钮上使用任意的<strong>修饰器</strong>来区分它们。确保添加了<code>is-selected</code>修饰器，同时确保被选择的按钮在其他兄弟按钮之上。（即z-index高）
+          </p>
+        </div>
+        <div class="bd-example">
+          {{ buttons_addons_selected }}
+        </div>
+      </div>
+      <div class="column highlight-full">
+        {% highlight html %}{{ buttons_addons_selected }}{% endhighlight %}
+      </div>
+    </div>
+
+    <div class="message is-info">
+      <div class="message-header">
+        <p><a href="{{ site.url }}/documentation/form/general/#form-group">表单组</a>和<strong>按钮列表</strong>的区别</p>
+      </div>
+      <div class="message-body">
+        <div class="content">
+          <p>
+            按钮列表可以通过<code>field is-grouped</code>容器或者新的<code>buttons</code>容器来实现，它们还是有一些区别：
+          </p>
+          <ul>
+            <li>
+              <code>buttons</code>有<strong>更简单的标记</strong>
+            </li>
+            <li>
+              <code>buttons</code>只能包含<code>button</code>元素
+            </li>
+            <li>
+              <code>field is-grouped</code>可以包含<em>任意 </em>的<code>control</code>输入框
+            </li>
+            <li>
+              <code>field is-grouped</code>会强制使所有的控件都在<strong>一行之中</strong>
+            </li>
+            <li>
+              在<code>field is-grouped</code>中你可以<strong>展开</strong>其中的一个控件
+            </li>
+          </ul>
+          <p>
+            总而言之，如果你只希望使用<em>单纯按钮 </em> 组成的列表，那么就使用<code>buttons</code>。如果你需要使用更多的空间的元素。使用<a href="{{ site.url }}/documentation/form/general/#form-group">表单组</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% include variables.html type='element' anchor_name='变量' %}
+
+  </div>
+</section>

@@ -1,0 +1,1086 @@
+---
+title: Form controls
+layout: documentation
+doc-tab: form
+doc-subtab: general
+variables_controls_keys:
+- control-radius
+- control-radius-small
+- control-padding-vertical
+- control-padding-horizontal
+variables_form_keys:
+- label-color
+- label-weight
+- help-size
+---
+
+{% capture example %}
+<div class="field">
+  <label class="label">Name</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Username</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+    <span class="icon is-small is-left">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+  <p class="help is-success">This username is available</p>
+</div>
+
+<div class="field">
+  <label class="label">Email</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+    <span class="icon is-small is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fa fa-warning"></i>
+    </span>
+  </div>
+  <p class="help is-danger">This email is invalid</p>
+</div>
+
+<div class="field">
+  <label class="label">Subject</label>
+  <div class="control">
+    <div class="select">
+      <select>
+        <option>Select dropdown</option>
+        <option>With options</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Message</label>
+  <div class="control">
+    <textarea class="textarea" placeholder="Textarea"></textarea>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input type="checkbox">
+      I agree to the <a href="#">terms and conditions</a>
+    </label>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+    <label class="radio">
+      <input type="radio" name="question">
+      Yes
+    </label>
+    <label class="radio">
+      <input type="radio" name="question">
+      No
+    </label>
+  </div>
+</div>
+
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+  <div class="control">
+    <button class="button is-text">Cancel</button>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture field_example %}
+<div class="field">
+  <label class="label">Label</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input">
+  </div>
+  <p class="help">This is a help text</p>
+</div>
+{% endcapture %}
+
+{% capture fields_example %}
+<div class="field">
+  <label class="label">Name</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="e.g Alex Smith">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Email</label>
+  <div class="control">
+    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+  </div>
+</div>
+{% endcapture %}
+
+{% capture control_input_example %}
+<div class="control">
+  <input class="input" type="text" placeholder="Text input">
+</div>
+{% endcapture %}
+
+{% capture control_select_example %}
+<div class="control">
+  <div class="select">
+    <select>
+      <option>Select dropdown</option>
+      <option>With options</option>
+    </select>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture control_button_example %}
+<div class="control">
+  <button class="button is-primary">Submit</button>
+</div>
+{% endcapture %}
+
+{% capture icons_example %}
+<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <input class="input" type="email" placeholder="Email">
+    <span class="icon is-small is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control has-icons-left">
+    <input class="input" type="password" placeholder="Password">
+    <span class="icon is-small is-left">
+      <i class="fa fa-lock"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control">
+    <button class="button is-success">
+      Login
+    </button>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture select_icons_example %}
+<div class="field">
+  <p class="control has-icons-left">
+    <span class="select">
+      <select>
+        <option selected>Country</option>
+        <option>Select dropdown</option>
+        <option>With options</option>
+      </select>
+    </span>
+    <span class="icon is-small is-left">
+      <i class="fa fa-globe"></i>
+    </span>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture has_icons_small_example %}
+<div class="field">
+  <label class="label is-small">Small input</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-small" type="email" placeholder="Email">
+    <span class="icon is-small is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture has_icons_normal_example %}
+<div class="field">
+  <label class="label">Normal input</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input" type="email" placeholder="Email">
+    <span class="icon is-small is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control has-icons-left has-icons-right">
+    <input class="input" type="email" placeholder="Email">
+    <span class="icon is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture has_icons_medium_example %}
+<div class="field">
+  <label class="label is-medium">Medium input</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-medium" type="email" placeholder="Email">
+    <span class="icon is-small is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-medium" type="email" placeholder="Email">
+    <span class="icon is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-medium" type="email" placeholder="Email">
+    <span class="icon is-medium is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-medium is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture has_icons_large_example %}
+<div class="field">
+  <label class="label is-large">Large input</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-large" type="email" placeholder="Email">
+    <span class="icon is-small is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-large" type="email" placeholder="Email">
+    <span class="icon is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-large" type="email" placeholder="Email">
+    <span class="icon is-medium is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-medium is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-large" type="email" placeholder="Email">
+    <span class="icon is-large is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-large is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture addons_example %}
+<div class="field has-addons">
+  <div class="control">
+    <input class="input" type="text" placeholder="Find a repository">
+  </div>
+  <div class="control">
+    <a class="button is-info">
+      Search
+    </a>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture addons_static_example %}
+<div class="field has-addons">
+  <p class="control">
+    <input class="input" type="text" placeholder="Your email">
+  </p>
+  <p class="control">
+    <a class="button is-static">
+      @gmail.com
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture addons_expanded_example %}
+<div class="field has-addons">
+  <p class="control">
+    <span class="select">
+      <select>
+        <option>$</option>
+        <option>£</option>
+        <option>€</option>
+      </select>
+    </span>
+  </p>
+  <p class="control">
+    <input class="input" type="text" placeholder="Amount of money">
+  </p>
+  <p class="control">
+    <a class="button">
+      Transfer
+    </a>
+  </p>
+</div>
+
+<div class="field has-addons">
+  <p class="control">
+    <span class="select">
+      <select>
+        <option>$</option>
+        <option>£</option>
+        <option>€</option>
+      </select>
+    </span>
+  </p>
+  <p class="control is-expanded">
+    <input class="input" type="text" placeholder="Amount of money">
+  </p>
+  <p class="control">
+    <a class="button">
+      Transfer
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture addons_expanded_fullwidth_example %}
+<div class="field has-addons">
+  <div class="control is-expanded">
+    <div class="select is-fullwidth">
+      <select name="country">
+        <option value="Argentina">Argentina</option>
+        <option value="Bolivia">Bolivia</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Chile">Chile</option>
+        <option value="Colombia">Colombia</option>
+        <option value="Ecuador">Ecuador</option>
+        <option value="Guyana">Guyana</option>
+        <option value="Paraguay">Paraguay</option>
+        <option value="Peru">Peru</option>
+        <option value="Suriname">Suriname</option>
+        <option value="Uruguay">Uruguay</option>
+        <option value="Venezuela">Venezuela</option>
+      </select>
+    </div>
+  </div>
+  <div class="control">
+    <button type="submit" class="button is-primary">Choose</button>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture addons_center_example %}
+<div class="field has-addons has-addons-centered">
+  <p class="control">
+    <span class="select">
+      <select>
+        <option>$</option>
+        <option>£</option>
+        <option>€</option>
+      </select>
+    </span>
+  </p>
+  <p class="control">
+    <input class="input" type="text" placeholder="Amount of money">
+  </p>
+  <p class="control">
+    <a class="button is-primary">
+      Transfer
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture addons_right_example %}
+<div class="field has-addons has-addons-right">
+  <p class="control">
+    <span class="select">
+      <select>
+        <option>$</option>
+        <option>£</option>
+        <option>€</option>
+      </select>
+    </span>
+  </p>
+  <p class="control">
+    <input class="input" type="text" placeholder="Amount of money">
+  </p>
+  <p class="control">
+    <a class="button is-primary">
+      Transfer
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture group_example %}
+<div class="field is-grouped">
+  <p class="control">
+    <a class="button is-primary">
+      Submit
+    </a>
+  </p>
+  <p class="control">
+    <a class="button is-light">
+      Cancel
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture group_centered_example %}
+<div class="field is-grouped is-grouped-centered">
+  <p class="control">
+    <a class="button is-primary">
+      Submit
+    </a>
+  </p>
+  <p class="control">
+    <a class="button is-light">
+      Cancel
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture group_right_example %}
+<div class="field is-grouped is-grouped-right">
+  <p class="control">
+    <a class="button is-primary">
+      Submit
+    </a>
+  </p>
+  <p class="control">
+    <a class="button is-light">
+      Cancel
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture group_expanded_example %}
+<div class="field is-grouped">
+  <p class="control is-expanded">
+    <input class="input" type="text" placeholder="Find a repository">
+  </p>
+  <p class="control">
+    <a class="button is-info">
+      Search
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture group_multiline_example %}
+<div class="field is-grouped is-grouped-multiline">
+  <p class="control">
+    <a class="button">
+      One
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Two
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Three
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Four
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Five
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Size
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Seven
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Eight
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Nine
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Ten
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Eleven
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Twelve
+    </a>
+  </p>
+  <p class="control">
+    <a class="button">
+      Thirteen
+    </a>
+  </p>
+</div>
+{% endcapture %}
+
+{% capture horizontal_form_example %}
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">From</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="Name">
+        <span class="icon is-small is-left">
+          <i class="fa fa-user"></i>
+        </span>
+      </p>
+    </div>
+    <div class="field">
+      <p class="control is-expanded has-icons-left has-icons-right">
+        <input class="input is-success" type="email" placeholder="Email" value="alex@smith.com">
+        <span class="icon is-small is-left">
+          <i class="fa fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fa fa-check"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label"></div>
+  <div class="field-body">
+    <div class="field is-expanded">
+      <div class="field has-addons">
+        <p class="control">
+          <a class="button is-static">
+            +44
+          </a>
+        </p>
+        <p class="control is-expanded">
+          <input class="input" type="tel" placeholder="Your phone number">
+        </p>
+      </div>
+      <p class="help">Do not enter the first zero</p>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Department</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <div class="select is-fullwidth">
+          <select>
+            <option>Business development</option>
+            <option>Marketing</option>
+            <option>Sales</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label">
+    <label class="label">Already a member?</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="member">
+          Yes
+        </label>
+        <label class="radio">
+          <input type="radio" name="member">
+          No
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Subject</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <input class="input is-danger" type="text" placeholder="e.g. Partnership opportunity">
+      </div>
+      <p class="help is-danger">
+        This field is required
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Question</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label">
+    <!-- Left empty for spacing -->
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <button class="button is-primary">
+          Send message
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture field_label_example %}
+<div class="field is-horizontal">
+  <div class="field-label">
+    <label class="label">No padding</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <input type="checkbox">
+          Checkbox
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-small">
+    <label class="label">Small padding</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <input class="input is-small" type="text" placeholder="Small sized input">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Normal label</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <input class="input" type="text" placeholder="Normal sized input">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-medium">
+    <label class="label">Medium label</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <input class="input is-medium" type="text" placeholder="Medium sized input">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-large">
+    <label class="label">Large label</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <input class="input is-large" type="text" placeholder="Large sized input">
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include subnav-form.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">表单控件（Form controls）</h1>
+    <h2 class="subtitle">
+      所有基本的<strong>表单控件</strong>在设计上都保持了一致性
+    </h2>
+
+    <hr>
+
+    <div class="content">
+      <p>下面的表单控件<strong>类</strong>都是支持的:</p>
+      <ul>
+        <li><code>.label</code></li>
+        <li><code>.input</code></li>
+        <li><code>.textarea</code></li>
+        <li><code>.select</code></li>
+        <li><code>.checkbox</code></li>
+        <li><code>.radio</code></li>
+        <li><code>.button</code></li>
+        <li><code>.help</code></li>
+      </ul>
+      <p>所有的表单控件都需要包含在<code>.control</code>容器内。<br>
+      当把一些表单控件都包含到<strong>表单</strong>中时, 可以使用<code>.field</code>类来作为一个<strong>容器</strong>，以此来保证一致的间隔。</p>
+    </div>
+
+    {% include snippet.html content=example %}
+
+    {% include anchor.html name="表单域（Form field）" %}
+
+    <div class="content">
+      <p><code>field</code>是作为以下元素的容器:</p>
+      <ul>
+        <li>文本类<code>label</code></li>
+        <li>表单类<code>control</code></li>
+        <li>可选的类<code>help</code>文本</li>
+      </ul>
+    </div>
+
+    {% include snippet.html content=field_example %}
+
+    <div class="content">
+      <p>这个容器来确保<strong>恒定的间隔</strong>。</p>
+    </div>
+
+    {% include snippet.html content=fields_example %}
+
+    {% include anchor.html name="表单控件（Form control）" %}
+
+    <div class="content">
+      <p><code>control</code>是一个多功能的类，用于<strong>增加单个表单控件</strong>。因为它作为一个登高的控制元素,它<strong class="has-text-danger">只能包含</strong>下列元素:</p>
+      <ul>
+        <li><code>input</code></li>
+        <li><code>select</code></li>
+        <li><code>button</code></li>
+        <li><code>icon</code></li>
+      </ul>
+    </div>
+
+    {% include snippet.html content=control_input_example %}
+
+    {% include snippet.html content=control_select_example %}
+
+    {% include snippet.html content=control_button_example %}
+
+    <!-- Font Awesome Icons -->
+    {% include anchor.html name="使用图标（With icons）" %}
+
+    <div class="content">
+      <p>你可以添加下面中的<strong>修饰器</strong>在<code>contorl</code>容器上:</p>
+      <ul>
+        <li>
+          <code>has-icons-left</code>
+        </li>
+        <li>
+          一同/或者<code>has-icons-right</code>
+        </li>
+      </ul>
+      <p>你也需要添加一个修饰器到<strong>icon</strong>元素:</p>
+      <ul>
+        <li>
+          当使用<code>has-icons-left</code>时，添加<code>icon is-left</code>
+        </li>
+        <li>
+          当使用<code>has-icons-right</code>时，添加<code>icon is-right</code>
+        </li>
+      </ul>
+      <p><strong>input</strong>元素的尺寸会定义icon的容器尺寸。</p>
+    </div>
+
+    {% include snippet.html content=icons_example clipped=true %}
+
+    <div class="content">
+      <p>
+        你也可以将图标添加到<strong>下拉菜单</strong>。
+      </p>
+    </div>
+
+    {% include snippet.html content=select_icons_example %}
+
+    <div class="content">
+      <p>
+        如果control中存在图标，Bulma会确保图标<strong>居中</strong>，无论输入框<em>或 </em>图标的尺寸。
+      </p>
+    </div>
+
+    {% include snippet.html content=has_icons_small_example %}
+
+    {% include snippet.html content=has_icons_normal_example clipped=true %}
+
+    {% include snippet.html content=has_icons_medium_example clipped=true %}
+
+    {% include snippet.html content=has_icons_large_example clipped=true %}
+
+    {% include anchor.html name="表单尾缀（Form addons）" %}
+
+    <div class="content">
+      <p>如果你需要<strong>添加尾缀</strong>，添加修饰类<code>has-addons</code>到<code>field</code>容器:</p>
+    </div>
+
+    {% include snippet.html content=addons_example %}
+
+    <div class="content">
+      <p>你<strong>只能</strong>为inputs, buttons,和dropdowns添加尾缀</p>
+    </div>
+
+    <div class="content">
+      <p>添加一个静态按钮<a href="{{site.url}}/documentation/elements/button#static-button">静态按钮</a>是很有用的。</p>
+    </div>
+
+    {% include snippet.html content=addons_static_example %}
+
+    <div class="content">
+      <p>通过添加<code>is-expanded</code>修饰器，可以让元素充满剩余的空间:</p>
+    </div>
+
+    {% include snippet.html content=addons_expanded_example horizontal=true more=true %}
+
+    <div class="content">
+      <p>如果你需要一个满宽度的下拉菜单，需要同时使用<code>control is-expanded</code>和<code>select is-fullwidth</code>.</p>
+    </div>
+
+    {% include snippet.html content=addons_expanded_fullwidth_example %}
+
+    <div class="content">
+      <p>使用<code>has-addons-centered</code>或<code>has-addons-right</code>修饰器来<strong>对齐</strong>。</p>
+    </div>
+
+    {% include snippet.html content=addons_center_example %}
+
+    {% include snippet.html content=addons_right_example %}
+
+    {% include anchor.html name="表单组（Form group）" %}
+
+    <div class="content">
+      <p>
+        如果你需要<strong>组织</strong>控件，添加<code>is-grouped</code>修饰器到<code>field</code>元素。
+      </p>
+    </div>
+
+    {% include snippet.html content=group_example %}
+
+    <div class="content">
+        使用<code>is-grouped-centered</code>或<code>is-grouped-right</code>修饰器来<strong>对齐</strong>元素。
+      </p>
+    </div>
+
+    {% include snippet.html content=group_centered_example %}
+
+    {% include snippet.html content=group_right_example %}
+
+    <div class="content">
+      <p>
+        添加<code>is-expanded</code>修饰器到控件元素来<strong>充满剩余的空间</strong>。
+      </p>
+    </div>
+
+    {% include snippet.html content=group_expanded_example %}
+
+    <div id="form-group-multiline" class="content">
+      <p>
+        添加<code>is-grouped-multiline</code>修饰器允许控件<strong>多行排列</strong>。这对于长控件列表来说，是很好的选择。
+      </p>
+    </div>
+
+    {% include snippet.html content=group_multiline_example clipped=true %}
+
+    <div class="message is-info">
+      <div class="message-header">
+        <p>按钮列表</p>
+      </div>
+      <div class="message-body">
+        <div class="content">
+          <p>
+            如果你只是需要<em>列表 </em>组, 可以尝试新的<code>buttons</code> 类，你可以直接创建<a href="{{ site.url }}/documentation/elements/button/#list-of-buttons">多行按钮列表</a>。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% include anchor.html name="（水平表单）Horizontal form" %}
+
+    <div class="content">
+      <p>如果你需要<strong>水平的</strong>表单控件，添加<code>is-horizontal</code>修饰器到<code>field</code>容器, 其中可以添加:</p>
+      <ul>
+        <li>
+          <code>field-label</code> 作为侧标签
+        </li>
+        <li>
+          <code>field-body</code>作为input/select/textarea的容器
+        </li>
+      </ul>
+      <p>你可以使用<code>is-grouped</code>或<code>has-addons</code>来修饰其子元素。</p>
+    </div>
+
+    {% include snippet.html content=horizontal_form_example horizontal=true more=true %}
+
+    <div class="content">
+      <p>
+        为了防止标签<strong>垂直对齐</strong>时的尺寸问题,<code>.field-label</code>类拥有<strong>4个尺寸修饰器</strong>:
+      </p>
+      <ul>
+        <li>
+          <code>.is-small</code>
+        </li>
+        <li>
+          <code>.is-normal</code>可以对任意<code>.input</code>或<code>.button</code>使用
+        </li>
+        <li>
+          <code>.is-medium</code>
+        </li>
+        <li>
+          <code>.is-large</code>
+        </li>
+      </ul>
+    </div>
+
+    {% include snippet.html content=field_label_example horizontal=true more=true %}
+
+    {% include anchor.html name="变量（Variables）" %}
+
+    <div class="content">
+      <p>
+        表单元素也可以通过下面这些变量进行<strong>定制</strong>。只需要修改下面这些变量<em>然后 </em>再引入Bulma. <a href="{{ site.url }}/documentation/overview/customize/">查看方法</a>.
+      </p>
+    </div>
+
+    <table class="table is-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Default value</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>Name</th>
+          <th>Default value</th>
+        </tr>
+      </tfoot>
+      <tbody>
+        {% for key in page.variables_controls_keys %}
+          {% assign variable = site.data.variables.utilities.controls.vars[key] %}
+          <tr>
+            <td>
+              <code>{{ variable.name }}</code>
+            </td>
+            <td>
+              <code>{{ variable.value }}</code>
+            </td>
+          </tr>
+        {% endfor %}
+        {% for key in page.variables_form_keys %}
+          {% assign variable = site.data.variables.elements.form.vars[key] %}
+          <tr>
+            <td>
+              <code>{{ variable.name }}</code>
+            </td>
+            <td>
+              <code>{{ variable.value }}</code>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</section>

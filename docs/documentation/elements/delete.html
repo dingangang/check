@@ -1,0 +1,92 @@
+---
+title: Delete
+layout: documentation
+doc-tab: elements
+doc-subtab: delete
+---
+
+{% capture cross_example %}
+<a class="delete"></a>
+{% endcapture %}
+
+{% capture cross_sizes_example %}
+<a class="delete is-small"></a>
+<a class="delete"></a>
+<a class="delete is-medium"></a>
+<a class="delete is-large"></a>
+{% endcapture %}
+
+{% capture cross_elements_example %}
+<div class="block">
+  <span class="tag is-success">
+    Hello World &nbsp;
+    <button class="delete is-small"></button>
+  </span>
+</div>
+
+<div class="notification is-danger">
+  <button class="delete"></button>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit
+</div>
+
+<article class="message is-info">
+  <div class="message-header">
+    Info
+    <button class="delete"></button>
+  </div>
+  <div class="message-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+  </div>
+</article>
+{% endcapture %}
+
+{% include subnav-elements.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">删除（Delete）</h1>
+    <h2 class="subtitle">
+      一种多用途的<strong>删除</strong>样式
+    </h2>
+    {%
+      include meta.html
+      colors=false
+      sizes=true
+      variables=false
+    %}
+
+    <hr>
+
+    <div class="content">
+      <p>
+        <code>.delete</code>元素，是一种单独存在的元素，可以在不同的内容中使用。
+      </p>
+      <p>
+        元素本身，就是一个简单的圆形和×的组合：
+      </p>
+    </div>
+
+    {% include snippet.html content=cross_example %}
+
+    {% include anchor.html name="尺寸" %}
+
+    <div class="content">
+      <p>
+        它包含有<strong>4种尺寸</strong>:
+      </p>
+    </div>
+
+    {% include snippet.html content=cross_sizes_example %}
+
+    {% include anchor.html name="联合使用" %}
+
+    <div class="content">
+      <p>
+        Bulma使用在<a href="/documentation/elements/tag/">标签</a>，<a href="/documentation/elements/notification/">通知</a>，和<a href="/documentation/components/message/">消息</a>:
+      </p>
+    </div>
+
+    {% include snippet.html content=cross_elements_example %}
+
+  </div>
+</section>

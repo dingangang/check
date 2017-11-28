@@ -1,0 +1,116 @@
+---
+title: Radio button
+layout: documentation
+doc-tab: form
+doc-subtab: radio
+---
+
+{% capture radio_example %}
+<div class="control">
+  <label class="radio">
+    <input type="radio" name="answer">
+    Yes
+  </label>
+  <label class="radio">
+    <input type="radio" name="answer">
+    No
+  </label>
+</div>
+{% endcapture %}
+
+{% capture radio_default_example %}
+<div class="control">
+  <label class="radio">
+    <input type="radio" name="foobar">
+    Foo
+  </label>
+  <label class="radio">
+    <input type="radio" name="foobar" checked>
+    Bar
+  </label>
+</div>
+{% endcapture %}
+
+{% capture radio_disabled_example %}
+<div class="control">
+  <label class="radio">
+    <input type="radio" name="rsvp">
+    Going
+  </label>
+  <label class="radio">
+    <input type="radio" name="rsvp">
+    Not going
+  </label>
+  <label class="radio" disabled>
+    <input type="radio" name="rsvp" disabled>
+    Maybe
+  </label>
+</div>
+{% endcapture %}
+
+{% include subnav-form.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">单选框（Radio）</h1>
+    <h2 class="subtitle">
+      基于浏览器原生样式设计<strong>单选框按钮</strong>
+    </h2>
+    {%
+      include meta.html
+      colors=false
+      sizes=false
+      variables=false
+    %}
+
+    <hr>
+
+    <div class="content">
+      <p>
+        <code>radio</code>只对原生的<code>&lt;input type="radio"&gt;</code>元素做了简单的包装，特意保持了其无修饰的样式，为了避免多种浏览器之间的差异而影响用户体验。
+      </p>
+      <p>
+        确保单选框的<code>name</code>属性有<strong>相同的值</strong>。
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column is-half">
+        {{radio_example}}
+      </div>
+      <div class="column is-half highlight-full">
+        {% highlight html %}{{radio_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    <div class="content">
+      <p>
+        你可以通过<strong>默认</strong>的HTML属性<code>checked</code>来调整<code>&lt;input&gt;</code>是否被选中。
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column is-half">
+        {{radio_default_example}}
+      </div>
+      <div class="column is-half highlight-full">
+        {% highlight html %}{{radio_default_example}}{% endhighlight %}
+      </div>
+    </div>
+
+    <div class="content">
+      <p>
+        你可以同时通过添加<code>disable</code>HTML属性到<code>&lt;label&gt;</code>和<code>&lt;input&gt;</code>来禁用单选框。
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column is-half">
+        {{radio_disabled_example}}
+      </div>
+      <div class="column is-half highlight-full">
+        {% highlight html %}{{radio_disabled_example}}{% endhighlight %}
+      </div>
+    </div>
+  </div>
+</section>

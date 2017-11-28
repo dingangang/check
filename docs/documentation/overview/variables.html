@@ -1,0 +1,121 @@
+---
+title: Variables
+layout: documentation
+doc-tab: overview
+doc-subtab: variables
+---
+
+{% include subnav-overview.html %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-spaced">变量（Variables）</h1>
+    <h2 class="subtitle">轻松<strong>定置</strong>Bulma来匹配您的设计</h2>
+
+    <hr>
+
+    {% assign initial_variables = site.data.variables.utilities.initial-variables %}
+    {% assign initial_vars      = initial_variables.vars %}
+    {% assign derived_variables = site.data.variables.utilities.derived-variables %}
+    {% assign derived_vars      = derived_variables.vars %}
+
+    <div class="content">
+      <p>Bulma有<strong>2种</strong>变量文件分为<strong>4</strong>个部分:</p>
+      <ol>
+        <li>
+          <strong>初始变量（Initial variables）</strong>:你直接按照<strong>字面意思</strong>定义的值,比如:
+          <ul>
+            <li><strong>颜色（colors）</strong>: <code>{{ initial_vars.blue.name }}: {{ initial_vars.blue.value }}</code></li>
+            <li><strong>字体大小（font sizes）</strong>: <code>{{ initial_vars.size-1.name }}: {{ initial_vars.size-1.value }}</code></li>
+            <li><strong>尺寸（dimensions）</strong>: <code>{{ initial_vars.gap.name }}: {{ initial_vars.gap.value }}</code></li>
+            <li><strong>其他值（other values）</strong>: <code>{{ initial_vars.easing.name }}: {{ initial_vars.easing.value }}</code>或<code>{{ initial_vars.radius-large.name }}: {{ initial_vars.radius-large.value }}</code></li>
+          </ul>
+        </li>
+        <li>
+          <strong>衍生变量（Derived variables）</strong>这些变量是根据在前一个文件中定义的值<strong>进行计算后</strong>得到的。 比如说，你可以有:
+          <ul>
+            <li>
+              <strong>基本颜色（Primary colors）</strong> 从初始变量衍生而来:
+              <ul>
+                <li><code>{{ derived_vars.primary.name }}: {{ derived_vars.primary.value }}</code></li>
+                <li><code>{{ derived_vars.link.name }}: {{ derived_vars.link.value }}</code></li>
+                <li><code>{{ derived_vars.info.name }}: {{ derived_vars.info.value }}</code></li>
+                <li><code>{{ derived_vars.success.name }}: {{ derived_vars.success.value }}</code></li>
+                <li><code>{{ derived_vars.warning.name }}: {{ derived_vars.warning.value }}</code></li>
+                <li><code>{{ derived_vars.danger.name }}: {{ derived_vars.danger.value }}</code></li>
+                <li><code>{{ derived_vars.dark.name }}: {{ derived_vars.dark.value }}</code></li>
+                <li><code>{{ derived_vars.text.name }}: {{ derived_vars.text.value }}</code></li>
+              </ul>
+            </li>
+            <li><code>{{ derived_vars.background.name }}: {{ derived_vars.background.value }}</code>: 基本背景颜色</li>
+            <li><code>{{ derived_vars.link.name }}: {{ derived_vars.link.value }}</code>: 连接色</li>
+            <li><code>{{ derived_vars.family-primary.name }}: {{ derived_vars.family-primary.value }}</code>: 基本字体指定为 sans-serif</li>
+            <li>
+              <strong>列表和图（Lists and maps）</strong> 预先定义好的变量集合:
+              <ul>
+                <li><code>{{ derived_vars.colors.name }}: {{ derived_vars.colors.value }}</code></li>
+                <li><code>{{ derived_vars.shades.name }}: {{ derived_vars.shades.value }}</code></li>
+                <li><code>{{ derived_vars.sizes.name }}: {{ derived_vars.sizes.value }}</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <p>
+        <strong>重写 </strong>其中的任意变量,修改完成之后<em>再引入</em>Bulma.
+      </p>
+    </div>
+
+    {% include anchor.html name="初始变量（Initial variables）" %}
+
+    <div class="content">
+      <p>
+        这些<a href="{{ initial_variables.file_url }}" target="_blank">变量</a>的值即是<strong>文本</strong>描述值.
+      </p>
+    </div>
+
+    <table class="table is-bordered is-striped">
+      <tbody>
+      {% for variable_hash in initial_vars %}
+        {% assign variable    = variable_hash[1] %}
+        {% assign starts_with = variable.value | slice: 0, 3 %}
+        <tr>
+          <td>
+            <code style="white-space: nowrap;">{{ variable.name }}</code>
+          </td>
+          <td>
+            {% if starts_with == 'hsl' %}
+              <span class="bd-color" style="background: {{ variable.value }};"></span>
+            {% endif %}
+            <code>{{ variable.value }}</code>
+          </td>
+        </tr>
+      {% endfor %}
+      <tbody>
+    </table>
+
+    {% capture custom_message %}
+      这些<a href="{{ derived_variables.file_url }}" target="_blank">变量</a>的值<strong>指向</strong>另外的变量。
+    {% endcapture %}
+    {%
+      include variables.html
+        anchor_name    = '衍生变量（Derived variables）'
+        data           = derived_variables
+        custom_message = custom_message
+        table_class    = 'is-bordered is-striped'
+    %}
+
+    {% capture custom_message %}
+      你可以通过使用下面的<a href="{{ site.data.variables.base.generic.file_url }}" target="_blank">通用变量</a>来<strong>定制</strong>通用样式. 只要在设定下方这些变量<em>之后</em> 再引入Bulma. <a href="{{ site.url }}/documentation/overview/customize/">查看方法</a>.
+    {% endcapture %}
+    {%
+      include variables.html
+        anchor_name    = '通用变量（Generic variables）'
+        tab            = 'base'
+        subtab         = 'generic'
+        custom_message = custom_message
+        table_class    = 'is-bordered is-striped'
+    %}
+
+  </div>
+</section>

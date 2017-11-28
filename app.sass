@@ -1,0 +1,22 @@
+//重置变量的方法。写法需要遵照sass的语法
+//1、引入初始化变量
+@import "sass/utilities/initial-variables"
+
+//2、设定自己的变量
+$blue: #72d0eb
+$pink: #ffb3b3
+$pink-invert: #fff
+$family-serif: "Merriweather", "Georgia", serif
+
+//3、设定衍生变量
+$primary: $pink
+$primary-invert: $pink-invert
+$danger: $orange
+$family-primary: $family-serif
+//4、引入bulma
+@import "bulma"
+
+//5、package.json 34行 bulma.sass 改为 app.sass
+//"build-sass": "node-sass --output-style expanded --source-map true app.sass css/bulma.css",
+
+//6、运行 npm run build 即可获取定制后的bulma.css
